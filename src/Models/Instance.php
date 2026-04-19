@@ -148,6 +148,7 @@ class Instance
      */
     public static function hardDelete(int $id): void
     {
+        Database::query('DELETE FROM provision_logs WHERE instance_id = ?', [$id]);
         Database::query('DELETE FROM instances WHERE id = ?', [$id]);
     }
 }
