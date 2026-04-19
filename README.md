@@ -30,7 +30,7 @@ You could run VoxelSite as a centralized SaaS — one app, shared database, mont
 git clone https://github.com/NowSquare/VoxelSwarm.git
 cd VoxelSwarm
 ```
-
+ 
 That's it — all dependencies are included in the repo. No `composer install` or `npm install` needed.
 
 ### 2. Point your domain & open the wizard
