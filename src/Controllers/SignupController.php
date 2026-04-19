@@ -97,8 +97,6 @@ class SignupController
         $statusUrl = "/status/{$instanceId}";
 
         // Flush the redirect response to the browser
-        ignore_user_abort(true);
-        set_time_limit(0);
         header("Location: {$statusUrl}");
         http_response_code(302);
         header('Content-Length: 0');
@@ -110,6 +108,8 @@ class SignupController
             }
         }
         flush();
+        ignore_user_abort(true);
+        set_time_limit(0);
 
         // Provision in background
         Provisioner::run($instanceId);

@@ -100,8 +100,6 @@ class InstanceController
         ]);
 
         // Send response, then continue provisioning safely
-        ignore_user_abort(true);
-        set_time_limit(0);
         http_response_code(200);
         header('Content-Type: application/json');
         echo json_encode(['id' => $instanceId, 'slug' => $slug]);
@@ -113,6 +111,8 @@ class InstanceController
             }
         }
         flush();
+        ignore_user_abort(true);
+        set_time_limit(0);
 
         Provisioner::run($instanceId);
     }
