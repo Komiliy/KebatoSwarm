@@ -135,7 +135,7 @@ $adapterConfig = [];
 switch ($adapter) {
     case 'nginx':
         $adapterConfig['conf_dir']      = prompt('Nginx conf directory', '/etc/nginx/conf.d');
-        $adapterConfig['reload_cmd']    = prompt('Reload command', 'nginx -t && systemctl reload nginx');
+        $adapterConfig['reload_cmd']    = prompt('Reload command', 'sudo /usr/local/bin/voxelswarm-nginx-reload');
         $adapterConfig['ssl_cert_path'] = prompt('SSL cert path (wildcard)', '');
         $adapterConfig['ssl_key_path']  = prompt('SSL key path', '');
         break;

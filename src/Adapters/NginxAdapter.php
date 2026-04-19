@@ -25,7 +25,7 @@ class NginxAdapter implements ControlPanelAdapter
     public function __construct(array $config)
     {
         $this->confDir     = $config['conf_dir']      ?? '/etc/nginx/conf.d';
-        $this->reloadCmd   = $config['reload_cmd']     ?? 'nginx -t && systemctl reload nginx';
+        $this->reloadCmd   = $config['reload_cmd']     ?? 'sudo /usr/local/bin/voxelswarm-nginx-reload';
         $this->sslCertPath = $config['ssl_cert_path']  ?? '';
         $this->sslKeyPath  = $config['ssl_key_path']   ?? '';
         $this->baseDomain  = Setting::get('base_domain', 'localhost');
@@ -38,7 +38,9 @@ class NginxAdapter implements ControlPanelAdapter
 
         $conf = $this->buildServerBlock($serverName, $documentRoot);
 
-        file_put_contents($confPath, $conf);
+        if (file_put_contents($confPath, $conf) === false) {
+            throw new \RuntimeException("Failed to write Nginx conf: {$confPath}");
+        }
         Logger::info('adapter', 'Nginx conf written', ['slug' => $slug, 'path' => $confPath]);
 
         $this->reloadNginx();
@@ -62,7 +64,9 @@ class NginxAdapter implements ControlPanelAdapter
 
         // Replace with 503 response
         $conf = $this->buildPausedBlock($serverName);
-        file_put_contents($confPath, $conf);
+        if (file_put_contents($confPath, $conf) === false) {
+            throw new \RuntimeException("Failed to write Nginx conf: {$confPath}");
+        }
 
         Logger::info('adapter', 'Nginx conf paused', ['slug' => $slug]);
         $this->reloadNginx();
@@ -97,15 +101,15 @@ class NginxAdapter implements ControlPanelAdapter
             return ['ok' => false, 'message' => "SSL key not found: {$this->sslKeyPath}"];
         }
 
-        // Test nginx -t
-        $process = Process::fromShellCommandline('nginx -t 2>&1');
+        // Test reload command
+        $process = Process::fromShellCommandline($this->reloadCmd);
         $process->run();
 
         if (!$process->isSuccessful()) {
-            return ['ok' => false, 'message' => 'Nginx config test failed: ' . $process->getOutput()];
+            return ['ok' => false, 'message' => 'Nginx reload command failed: ' . ($process->getErrorOutput() ?: $process->getOutput())];
         }
 
-        return ['ok' => true, 'message' => 'Nginx adapter verified. Conf dir writable, config valid.'];
+        return ['ok' => true, 'message' => 'Nginx adapter verified. Conf dir writable, reload command succeeded.'];
     }
 
     private function buildServerBlock(string $serverName, string $documentRoot): string
