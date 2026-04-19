@@ -97,25 +97,22 @@ class SignupController
         $statusUrl = "/status/{$instanceId}";
 
         // Flush the redirect response to the browser
+        ignore_user_abort(true);
+        set_time_limit(0);
         header("Location: {$statusUrl}");
         http_response_code(302);
-
-        // Close the connection — browser navigates to status page
-        if (function_exists('fastcgi_finish_request')) {
-            fastcgi_finish_request();
-        } else {
-            // Fallback: ensure PHP continues after browser disconnect
-            ignore_user_abort(true);
-            header('Content-Length: 0');
-            header('Connection: close');
-            flush();
-            if (function_exists('ob_end_flush')) {
+        header('Content-Length: 0');
+        header('Connection: close');
+        flush();
+        if (function_exists('ob_get_level')) {
+            while (ob_get_level() > 0) {
                 @ob_end_flush();
             }
-            flush();
         }
+        flush();
 
         // Provision in background
         Provisioner::run($instanceId);
     }
 }
+
