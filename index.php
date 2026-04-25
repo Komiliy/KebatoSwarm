@@ -23,6 +23,7 @@ use Swarm\Controllers\DeploymentController;
 use Swarm\Controllers\AccountController;
 use Swarm\Controllers\SystemController;
 use Swarm\Controllers\TemplateController;
+use Swarm\Controllers\ApiController;
 
 $router = new Router();
 
@@ -48,6 +49,7 @@ $router->get('/signup',                  [SignupController::class,    'index']);
 $router->post('/signup',                 [SignupController::class,    'store'],  ['throttle:signup']);
 $router->get('/status/{id}',             [StatusController::class,    'show']);
 $router->get('/api/status/{id}',         [StatusController::class,    'json']);
+$router->post('/api/provision',          [ApiController::class,       'provision']);
 
 // ── Operator auth ──
 $router->get('/operator/login',          [AuthController::class,      'show']);
