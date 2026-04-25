@@ -13,7 +13,7 @@ $isFailed = $instance['status'] === 'failed';
 $badgeClass = match($instance['status']) {
   'active'       => 'bg-green-100/50 text-green-700 dark:bg-green-500/10 dark:text-green-400 ring-1 ring-inset ring-green-600/20 dark:ring-green-500/20',
   'paused'       => 'bg-amber-100/50 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400 ring-1 ring-inset ring-amber-600/20 dark:ring-amber-500/20',
-  'provisioning' => 'bg-orange-100/50 text-orange-700 dark:bg-orange-500/10 dark:text-orange-400 ring-1 ring-inset ring-orange-600/20 dark:ring-orange-500/20 animate-pulse',
+  'provisioning' => 'bg-blue-100/50 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 ring-1 ring-inset ring-blue-600/20 dark:ring-blue-500/20 animate-pulse',
   'failed'       => 'bg-red-100/50 text-red-700 dark:bg-red-500/10 dark:text-red-400 ring-1 ring-inset ring-red-600/10 dark:ring-red-500/20',
   default        => 'bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 ring-1 ring-inset ring-zinc-500/20 dark:ring-zinc-400/20',
 };
@@ -21,7 +21,7 @@ $badgeClass = match($instance['status']) {
 $statusDotClass = match($instance['status']) {
   'active'       => 'bg-green-500',
   'paused'       => 'bg-amber-500',
-  'provisioning' => 'bg-orange-500 animate-pulse',
+  'provisioning' => 'bg-blue-500 animate-pulse',
   'failed'       => 'bg-red-500',
   default        => 'bg-zinc-400',
 };
@@ -54,7 +54,7 @@ $headerClass = "px-5 py-4 border-b border-zinc-100 dark:border-zinc-800/80 bg-zi
       <span class="font-mono text-xs"><?= htmlspecialchars($instance['slug']) ?></span>
       <?php if ($isActive): ?>
         <span class="text-zinc-300 dark:text-zinc-600">·</span>
-        <a href="<?= $liveUrl ?>" target="_blank" class="inline-flex items-center gap-1 text-orange-600 dark:text-orange-500 hover:text-orange-700 dark:hover:text-orange-400 transition-colors group font-medium">
+        <a href="<?= $liveUrl ?>" target="_blank" class="inline-flex items-center gap-1 text-blue-600 dark:text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 transition-colors group font-medium">
           <?= htmlspecialchars($instance['subdomain']) ?>
           <svg class="w-3 h-3 opacity-50 group-hover:opacity-100 transition-opacity" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
@@ -132,7 +132,7 @@ $headerClass = "px-5 py-4 border-b border-zinc-100 dark:border-zinc-800/80 bg-zi
         <div class="min-w-0 flex-1 flex items-center justify-between gap-4">
           <span class="text-[13px] font-medium text-zinc-500 dark:text-zinc-400"><?= $d['label'] ?></span>
           <?php if (!empty($d['link'])): ?>
-            <a href="<?= $d['link'] ?>" target="_blank" class="text-sm font-medium text-orange-600 dark:text-orange-500 hover:text-orange-700 dark:hover:text-orange-400 transition-colors truncate"><?= htmlspecialchars($d['value']) ?></a>
+            <a href="<?= $d['link'] ?>" target="_blank" class="text-sm font-medium text-blue-600 dark:text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 transition-colors truncate"><?= htmlspecialchars($d['value']) ?></a>
           <?php elseif (!empty($d['mono'])): ?>
             <span class="text-sm font-mono font-medium text-zinc-900 dark:text-white truncate"><?= htmlspecialchars($d['value']) ?></span>
           <?php else: ?>
@@ -152,7 +152,7 @@ $headerClass = "px-5 py-4 border-b border-zinc-100 dark:border-zinc-800/80 bg-zi
   </div>
   <div class="p-5">
     <textarea id="instance-notes" rows="3" placeholder="Add notes about this instance..."
-              class="block w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 px-3 py-2.5 text-sm text-zinc-900 dark:text-white placeholder-zinc-400 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 transition-shadow resize-y"><?= htmlspecialchars($instance['notes'] ?? '') ?></textarea>
+              class="block w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 px-3 py-2.5 text-sm text-zinc-900 dark:text-white placeholder-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-shadow resize-y"><?= htmlspecialchars($instance['notes'] ?? '') ?></textarea>
     <div class="mt-3 flex justify-end">
       <button id="btn-save-notes" onclick="saveNotes()" class="sw-btn-secondary text-xs px-4 py-1.5">
         Save Notes
@@ -199,7 +199,7 @@ $headerClass = "px-5 py-4 border-b border-zinc-100 dark:border-zinc-800/80 bg-zi
                   $logBadge = match($log['status']) {
                     'completed' => 'bg-green-100/50 text-green-700 dark:bg-green-500/10 dark:text-green-400 ring-1 ring-inset ring-green-600/20 dark:ring-green-500/20',
                     'failed'    => 'bg-red-100/50 text-red-700 dark:bg-red-500/10 dark:text-red-400 ring-1 ring-inset ring-red-600/10 dark:ring-red-500/20',
-                    'started'   => 'bg-orange-100/50 text-orange-700 dark:bg-orange-500/10 dark:text-orange-400 ring-1 ring-inset ring-orange-600/20 dark:ring-orange-500/20 animate-pulse',
+                    'started'   => 'bg-blue-100/50 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 ring-1 ring-inset ring-blue-600/20 dark:ring-blue-500/20 animate-pulse',
                     default     => 'bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 ring-1 ring-inset ring-zinc-500/20 dark:ring-zinc-400/20',
                   };
                 ?>

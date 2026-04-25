@@ -8,7 +8,7 @@
 $pageTitle = 'Account — VoxelSwarm';
 $s = $settings;
 
-$inputClass  = "block w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-950 px-3 py-2 text-sm text-zinc-900 dark:text-white placeholder-zinc-400 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 transition-shadow";
+$inputClass  = "block w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-950 px-3 py-2 text-sm text-zinc-900 dark:text-white placeholder-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-shadow";
 $labelClass  = "block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1.5";
 $hintClass   = "text-xs text-zinc-500 dark:text-zinc-400 mt-1.5";
 $cardClass   = "bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800/80 rounded-xl shadow-sm dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] overflow-hidden";
@@ -35,8 +35,8 @@ $headerClass = "px-6 py-4 border-b border-zinc-100 dark:border-zinc-800/80 bg-zi
        ═══════════════════════════════════════════════════════════ -->
   <div class="<?= $cardClass ?>">
     <div class="<?= $headerClass ?> flex items-center gap-3">
-      <div class="w-8 h-8 rounded-lg bg-orange-100 dark:bg-orange-500/10 flex items-center justify-center flex-shrink-0">
-        <svg class="w-4 h-4 text-orange-600 dark:text-orange-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      <div class="w-8 h-8 rounded-lg bg-blue-100 dark:bg-blue-500/10 flex items-center justify-center flex-shrink-0">
+        <svg class="w-4 h-4 text-blue-600 dark:text-blue-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
       </div>
       <div>
         <h2 class="text-base font-semibold tracking-tight text-zinc-900 dark:text-white">Email Address</h2>
@@ -60,8 +60,8 @@ $headerClass = "px-6 py-4 border-b border-zinc-100 dark:border-zinc-800/80 bg-zi
        ═══════════════════════════════════════════════════════════ -->
   <div class="<?= $cardClass ?>">
     <div class="<?= $headerClass ?> flex items-center gap-3">
-      <div class="w-8 h-8 rounded-lg bg-orange-100 dark:bg-orange-500/10 flex items-center justify-center flex-shrink-0">
-        <svg class="w-4 h-4 text-orange-600 dark:text-orange-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <div class="w-8 h-8 rounded-lg bg-blue-100 dark:bg-blue-500/10 flex items-center justify-center flex-shrink-0">
+        <svg class="w-4 h-4 text-blue-600 dark:text-blue-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
       </div>
       <div>
         <h2 class="text-base font-semibold tracking-tight text-zinc-900 dark:text-white">Password</h2>

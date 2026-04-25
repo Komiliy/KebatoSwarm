@@ -41,7 +41,7 @@ $isDomainMode = ($adapter !== 'local');
           <?php if ($isDomainMode): ?>
             <div class="flex items-stretch">
               <input type="text" id="inst-slug" name="slug" placeholder="acme" required
-                     class="block flex-1 rounded-l-lg border border-r-0 border-zinc-300 dark:border-zinc-700 bg-white dark:bg-[#0f0f11] px-3 py-2.5 text-sm text-zinc-900 dark:text-white placeholder-zinc-400 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 transition-shadow"
+                     class="block flex-1 rounded-l-lg border border-r-0 border-zinc-300 dark:border-zinc-700 bg-white dark:bg-[#0f0f11] px-3 py-2.5 text-sm text-zinc-900 dark:text-white placeholder-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-shadow"
                      oninput="this.value = this.value.toLowerCase().replace(/[^a-z0-9-]/g, '')">
               <span class="inline-flex items-center px-3 py-2.5 rounded-r-lg border border-l-0 border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-950 text-sm text-zinc-500 dark:text-zinc-400 font-medium select-none">.<?= htmlspecialchars($baseDomain) ?></span>
             </div>
@@ -52,7 +52,7 @@ $isDomainMode = ($adapter !== 'local');
             <div class="flex items-stretch">
               <span class="inline-flex items-center px-3 py-2.5 rounded-l-lg border border-r-0 border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-950 text-xs text-zinc-500 dark:text-zinc-400 font-mono select-none truncate max-w-[200px]"><?= htmlspecialchars($instancesPath) ?>/</span>
               <input type="text" id="inst-slug" name="slug" placeholder="my-site" required
-                     class="block flex-1 rounded-r-lg border border-l-0 border-zinc-300 dark:border-zinc-700 bg-white dark:bg-[#0f0f11] px-3 py-2.5 text-sm text-zinc-900 dark:text-white placeholder-zinc-400 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 transition-shadow"
+                     class="block flex-1 rounded-r-lg border border-l-0 border-zinc-300 dark:border-zinc-700 bg-white dark:bg-[#0f0f11] px-3 py-2.5 text-sm text-zinc-900 dark:text-white placeholder-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-shadow"
                      oninput="this.value = this.value.toLowerCase().replace(/[^a-z0-9-]/g, '')">
             </div>
             <p class="text-xs text-zinc-400 dark:text-zinc-500 mt-1.5">Folder name for this instance. Lowercase letters, numbers, and hyphens only.</p>
@@ -64,13 +64,13 @@ $isDomainMode = ($adapter !== 'local');
           <div>
             <label for="inst-name" class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1.5">Name <span class="text-zinc-400 text-xs font-normal">(optional)</span></label>
             <input type="text" id="inst-name" name="name" placeholder="e.g. Acme Corp"
-                   class="block w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-[#0f0f11] px-3 py-2.5 text-sm text-zinc-900 dark:text-white placeholder-zinc-400 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 transition-shadow">
+                   class="block w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-[#0f0f11] px-3 py-2.5 text-sm text-zinc-900 dark:text-white placeholder-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-shadow">
             <p class="text-xs text-zinc-400 dark:text-zinc-500 mt-1">Display name for your records.</p>
           </div>
           <div>
             <label for="inst-email" class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1.5">Email <span class="text-zinc-400 text-xs font-normal">(optional)</span></label>
             <input type="email" id="inst-email" name="email" placeholder="<?= htmlspecialchars($operatorEmail) ?>"
-                   class="block w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-[#0f0f11] px-3 py-2.5 text-sm text-zinc-900 dark:text-white placeholder-zinc-400 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 transition-shadow">
+                   class="block w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-[#0f0f11] px-3 py-2.5 text-sm text-zinc-900 dark:text-white placeholder-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-shadow">
             <p class="text-xs text-zinc-400 dark:text-zinc-500 mt-1">Contact email for your records.</p>
           </div>
         </div>

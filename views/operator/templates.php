@@ -37,8 +37,8 @@ $pageTitle = 'Templates — VoxelSwarm';
   <?php if (empty($versions)): ?>
     <div class="p-8">
       <div class="max-w-md mx-auto text-center">
-        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-orange-100 dark:bg-orange-500/10 flex items-center justify-center">
-          <svg viewBox="0 0 24 24" class="text-orange-600 dark:text-orange-400" style="width: 22px; height: 22px;">
+        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-blue-100 dark:bg-blue-500/10 flex items-center justify-center">
+          <svg viewBox="0 0 24 24" class="text-blue-600 dark:text-blue-400" style="width: 22px; height: 22px;">
             <path class="fill-current opacity-100" d="M12 3L20 7.5L12 12L4 7.5Z" />
             <path class="fill-current opacity-70" d="M4 7.5L12 12L12 21L4 16.5Z" />
             <path class="fill-current opacity-40" d="M20 7.5L12 12L12 21L20 16.5Z" />
@@ -68,9 +68,9 @@ $pageTitle = 'Templates — VoxelSwarm';
         <div class="px-6 py-4 flex items-center justify-between gap-4">
           <div class="flex items-center gap-4 min-w-0">
             <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 <?= $v['active']
-              ? 'bg-orange-50 dark:bg-orange-500/10 text-orange-600 dark:text-orange-400'
+              ? 'bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400'
               : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-400' ?>">
-              <svg viewBox="0 0 24 24" class="text-orange-600 dark:text-orange-400" style="width: 20px; height: 20px;">
+              <svg viewBox="0 0 24 24" class="text-blue-600 dark:text-blue-400" style="width: 20px; height: 20px;">
                 <path class="fill-current opacity-100" d="M12 3L20 7.5L12 12L4 7.5Z" />
                 <path class="fill-current opacity-70" d="M4 7.5L12 12L12 21L4 16.5Z" />
                 <path class="fill-current opacity-40" d="M20 7.5L12 12L12 21L20 16.5Z" />
@@ -80,7 +80,7 @@ $pageTitle = 'Templates — VoxelSwarm';
               <div class="flex items-center gap-2">
                 <span class="text-sm font-semibold text-zinc-900 dark:text-white">v<?= htmlspecialchars($v['version']) ?></span>
                 <?php if ($v['active']): ?>
-                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-orange-100 dark:bg-orange-500/15 text-orange-700 dark:text-orange-400">Active</span>
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-blue-100 dark:bg-blue-500/15 text-blue-700 dark:text-blue-400">Active</span>
                 <?php endif; ?>
               </div>
               <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">

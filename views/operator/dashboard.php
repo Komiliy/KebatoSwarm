@@ -14,8 +14,8 @@ $isOnboarding = ($counts['total'] ?? 0) === 0;
 <div class="max-w-lg mx-auto" style="padding-top: 2rem; padding-bottom: 4rem;">
   <!-- Hero -->
   <div class="text-center mb-8">
-    <div class="w-16 h-16 mx-auto mb-5 rounded-2xl bg-orange-100 dark:bg-orange-500/10 flex items-center justify-center">
-      <svg viewBox="0 0 24 24" class="text-orange-600 dark:text-orange-400" style="width: 32px; height: 32px;">
+    <div class="w-16 h-16 mx-auto mb-5 rounded-2xl bg-blue-100 dark:bg-blue-500/10 flex items-center justify-center">
+      <svg viewBox="0 0 24 24" class="text-blue-600 dark:text-blue-400" style="width: 32px; height: 32px;">
         <path class="fill-current opacity-100" d="M12 3L20 7.5L12 12L4 7.5Z" />
         <path class="fill-current opacity-70" d="M4 7.5L12 12L12 21L4 16.5Z" />
         <path class="fill-current opacity-40" d="M20 7.5L12 12L12 21L20 16.5Z" />
@@ -81,8 +81,8 @@ $isOnboarding = ($counts['total'] ?? 0) === 0;
         $descClass   = 'text-zinc-400 dark:text-zinc-600';
         $cardOpacity = 'opacity-60';
       } elseif ($isActive) {
-        $ringClass   = 'border-orange-200 dark:border-orange-500/30 shadow-sm dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]';
-        $numBg       = 'bg-orange-100 dark:bg-orange-500/10 text-orange-600 dark:text-orange-400';
+        $ringClass   = 'border-blue-200 dark:border-blue-500/30 shadow-sm dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]';
+        $numBg       = 'bg-blue-100 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400';
         $titleClass  = 'text-zinc-900 dark:text-white';
         $descClass   = 'text-zinc-500 dark:text-zinc-400';
         $cardOpacity = '';
@@ -97,7 +97,7 @@ $isOnboarding = ($counts['total'] ?? 0) === 0;
       <?php if ($step['done'] || !$isFuture): ?>
         <a href="<?= $step['done'] ? '#' : $step['href'] ?>"
            <?php if ($i === 2 && $hasTemplates && !$step['done']): ?>onclick="openNewInstanceModal(); return false;"<?php endif; ?>
-           class="group block bg-white dark:bg-zinc-900 border <?= $ringClass ?> rounded-xl p-5 transition-all duration-200 <?= $cardOpacity ?> <?= $step['done'] ? 'cursor-default' : 'hover:border-orange-300 dark:hover:border-orange-500/40' ?>">
+           class="group block bg-white dark:bg-zinc-900 border <?= $ringClass ?> rounded-xl p-5 transition-all duration-200 <?= $cardOpacity ?> <?= $step['done'] ? 'cursor-default' : 'hover:border-blue-300 dark:hover:border-blue-500/40' ?>">
       <?php else: ?>
         <div class="bg-white dark:bg-zinc-900 border <?= $ringClass ?> rounded-xl p-5 <?= $cardOpacity ?>">
       <?php endif; ?>
@@ -123,7 +123,7 @@ $isOnboarding = ($counts['total'] ?? 0) === 0;
               <p class="text-xs <?= $descClass ?> leading-relaxed"><?= $step['desc'] ?></p>
               <?php if ($isActive): ?>
                 <div class="mt-3">
-                  <span class="inline-flex items-center gap-1.5 text-xs font-medium text-orange-600 dark:text-orange-400 group-hover:text-orange-700 dark:group-hover:text-orange-300 transition-colors">
+                  <span class="inline-flex items-center gap-1.5 text-xs font-medium text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors">
                     <?= $step['cta'] ?>
                     <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                   </span>
@@ -133,7 +133,7 @@ $isOnboarding = ($counts['total'] ?? 0) === 0;
 
             <!-- Arrow (active step only) -->
             <?php if ($isActive): ?>
-              <svg class="w-4 h-4 text-zinc-300 dark:text-zinc-600 group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-colors flex-shrink-0 mt-2.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              <svg class="w-4 h-4 text-zinc-300 dark:text-zinc-600 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors flex-shrink-0 mt-2.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
             <?php endif; ?>
           </div>
 
@@ -241,7 +241,7 @@ $isOnboarding = ($counts['total'] ?? 0) === 0;
           <?php foreach ($recentLogs as $log): ?>
             <tr class="hover:bg-zinc-50/50 dark:hover:bg-zinc-800/30 transition-colors">
               <td class="px-5 py-3">
-                <a href="/operator/instances/<?= $log['instance_id'] ?>" class="font-medium text-zinc-900 dark:text-white hover:text-orange-600 dark:hover:text-orange-500 transition-colors group">
+                <a href="/operator/instances/<?= $log['instance_id'] ?>" class="font-medium text-zinc-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors group">
                   <?= htmlspecialchars($log['slug'] ?? '—') ?>
                   <span class="inline-block ml-1 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
                 </a>
@@ -252,7 +252,7 @@ $isOnboarding = ($counts['total'] ?? 0) === 0;
                   $badgeClass = match($log['status']) {
                     'completed' => 'bg-green-100/50 text-green-700 dark:bg-green-500/10 dark:text-green-400 ring-1 ring-inset ring-green-600/20 dark:ring-green-500/20',
                     'failed'    => 'bg-red-100/50 text-red-700 dark:bg-red-500/10 dark:text-red-400 ring-1 ring-inset ring-red-600/10 dark:ring-red-500/20',
-                    'started'   => 'bg-orange-100/50 text-orange-700 dark:bg-orange-500/10 dark:text-orange-400 ring-1 ring-inset ring-orange-600/20 dark:ring-orange-500/20 animate-pulse',
+                    'started'   => 'bg-blue-100/50 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 ring-1 ring-inset ring-blue-600/20 dark:ring-blue-500/20 animate-pulse',
                     default     => 'bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 ring-1 ring-inset ring-zinc-500/20 dark:ring-zinc-400/20',
                   };
                 ?>

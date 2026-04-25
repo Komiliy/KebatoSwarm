@@ -26,7 +26,7 @@ $currentPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     })();
   </script>
 </head>
-<body class="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 min-h-screen flex font-sans selection:bg-orange-500/30 selection:text-white antialiased">
+<body class="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 min-h-screen flex font-sans selection:bg-blue-500/30 selection:text-white antialiased">
 
   <div class="flex min-h-screen w-full">
     <!-- Mobile Top Bar (< md) -->
@@ -35,7 +35,7 @@ $currentPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
         <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
       </button>
       <a href="/operator" class="flex items-center gap-2 text-zinc-900 dark:text-white">
-        <svg viewBox="0 0 24 24" class="text-orange-600" style="width: 20px; height: 20px;" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 24 24" class="text-blue-600" style="width: 20px; height: 20px;" xmlns="http://www.w3.org/2000/svg">
           <path class="fill-current opacity-100" d="M12 3L20 7.5L12 12L4 7.5Z" />
           <path class="fill-current opacity-70" d="M4 7.5L12 12L12 21L4 16.5Z" />
           <path class="fill-current opacity-40" d="M20 7.5L12 12L12 21L20 16.5Z" />
@@ -53,7 +53,7 @@ $currentPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
       <!-- Logo -->
       <div class="px-5 h-16 flex items-center">
         <a href="/operator" class="flex items-center gap-2.5 text-zinc-900 dark:text-white hover:opacity-80 transition-opacity">
-          <svg viewBox="0 0 24 24" class="text-orange-600 flex-shrink-0" style="width: 22px; height: 22px;" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 24 24" class="text-blue-600 flex-shrink-0" style="width: 22px; height: 22px;" xmlns="http://www.w3.org/2000/svg">
             <path class="fill-current opacity-100" d="M12 3L20 7.5L12 12L4 7.5Z" />
             <path class="fill-current opacity-70" d="M4 7.5L12 12L12 21L4 16.5Z" />
             <path class="fill-current opacity-40" d="M20 7.5L12 12L12 21L20 16.5Z" />
@@ -68,14 +68,14 @@ $currentPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
         /**
          * Nav item renderer — consistent across all sidebar items.
          *
-         * Active state: 2px orange left accent + tinted background + orange text.
+         * Active state: 2px blue left accent + tinted background + blue text.
          * Hover state: subtle background lift + text brightens.
          */
         $navItem = function($path, $exact, $icon, $label) use ($currentPath) {
           $isActive = $exact ? $currentPath === $path : str_starts_with($currentPath, $path);
           if ($isActive) {
-            $cls = 'bg-orange-100 dark:bg-orange-500/10 text-orange-600 dark:text-orange-400 font-medium';
-            $style = 'border-left: 2px solid var(--color-orange-500); padding-left: 10px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0;';
+            $cls = 'bg-blue-100 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 font-medium';
+            $style = 'border-left: 2px solid var(--color-blue-500); padding-left: 10px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0;';
           } else {
             $cls = 'text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800/50 hover:text-zinc-900 dark:hover:text-zinc-100 font-medium';
             $style = 'padding-left: 12px; border-radius: var(--radius-lg);';
@@ -308,7 +308,7 @@ $currentPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
           iconEl.innerHTML = '<svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>';
         } else {
           okBtn.className = 'flex-1 sw-btn-primary';
-          iconEl.className = 'w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 bg-orange-50 dark:bg-orange-500/10 text-orange-600 dark:text-orange-400';
+          iconEl.className = 'w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400';
           iconEl.innerHTML = '<svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>';
         }
 

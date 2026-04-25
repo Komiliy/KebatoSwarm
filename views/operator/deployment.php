@@ -17,7 +17,7 @@ function sv(array $arr, string $key): string {
 $adapter = $s['control_panel_adapter'] ?? 'local';
 $usesDomains = in_array($adapter, ['nginx', 'forge', 'cpanel', 'plesk']);
 
-$inputClass = "block w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-950 px-3 py-2 text-sm text-zinc-900 dark:text-white placeholder-zinc-400 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 transition-shadow";
+$inputClass = "block w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-950 px-3 py-2 text-sm text-zinc-900 dark:text-white placeholder-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-shadow";
 $labelClass = "block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1.5";
 $hintClass  = "text-xs text-zinc-500 dark:text-zinc-500 mt-1.5";
 $cardClass  = "bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800/80 rounded-xl shadow-sm dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] overflow-hidden";

@@ -55,7 +55,7 @@ $pageTitle = 'Install — VoxelSwarm';
     <!-- Logo / Header -->
     <div class="text-center mb-8">
       <div class="inline-flex items-center gap-3 mb-4">
-        <svg class="w-10 h-10 text-orange-500" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="w-10 h-10 text-blue-500" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="4" y="4" width="14" height="14" rx="3" fill="currentColor" opacity="0.9"/>
           <rect x="22" y="4" width="14" height="14" rx="3" fill="currentColor" opacity="0.6"/>
           <rect x="4" y="22" width="14" height="14" rx="3" fill="currentColor" opacity="0.6"/>

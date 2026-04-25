@@ -218,7 +218,7 @@ $valueClass  = "text-sm font-semibold text-zinc-900 dark:text-white mt-1";
           <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1" style="line-height: 1.5;">All instances, logs, ZIPs, and processed templates will be deleted. Your account and settings are kept.</p>
           <div class="mt-4">
             <label class="text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1.5 block">Enter your password</label>
-            <input type="password" id="refresh-password" class="block w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-950 px-3 py-2 text-sm text-zinc-900 dark:text-white placeholder-zinc-400 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 transition-shadow" autocomplete="current-password">
+            <input type="password" id="refresh-password" class="block w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-950 px-3 py-2 text-sm text-zinc-900 dark:text-white placeholder-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-shadow" autocomplete="current-password">
             <p class="text-xs text-zinc-500 dark:text-zinc-500 mt-1.5">You'll log in with this same password after the refresh.</p>
           </div>
         </div>
@@ -244,7 +244,7 @@ $valueClass  = "text-sm font-semibold text-zinc-900 dark:text-white mt-1";
           <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1" style="line-height: 1.5;">This permanently wipes the database, all instances, settings, and files. The setup wizard will appear so you can start from scratch.</p>
           <div class="mt-4">
             <label class="text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1.5 block">Confirm your password</label>
-            <input type="password" id="reset-password" class="block w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-950 px-3 py-2 text-sm text-zinc-900 dark:text-white placeholder-zinc-400 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 transition-shadow" autocomplete="current-password">
+            <input type="password" id="reset-password" class="block w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-950 px-3 py-2 text-sm text-zinc-900 dark:text-white placeholder-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-shadow" autocomplete="current-password">
             <p class="text-xs text-zinc-500 dark:text-zinc-500 mt-1.5">Enter your operator password to confirm this action.</p>
           </div>
         </div>
