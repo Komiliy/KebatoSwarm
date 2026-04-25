@@ -1,4 +1,4 @@
-# RicsianSwarm
+# RicsianSwarm v2
 
 **Deploy VoxelSite for everyone.**
 
