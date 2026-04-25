@@ -15,11 +15,13 @@ $isOnboarding = ($counts['total'] ?? 0) === 0;
   <!-- Hero -->
   <div class="text-center mb-8">
     <div class="w-16 h-16 mx-auto mb-5 rounded-2xl bg-blue-100 dark:bg-blue-500/10 flex items-center justify-center">
-      <svg viewBox="0 0 24 24" class="text-blue-600 dark:text-blue-400" style="width: 32px; height: 32px;">
+      <svg viewBox="0 0 24 24" class="text-blue-600" style="width: 20px; height: 20px;" xmlns="http://www.w3.org/2000/svg"> <path class="fill-current opacity-100" d="M19.5 3.4c-5.6-.7-10.7 1-13.6 4.7-1.4 1.8-1.9 3.9-1.7 5.8 1.2-2.1 3.4-3.6 6-3.8 1.5-.1 2.9.3 4.1 1.1-.2-1.3.1-2.8.9-4.1.9-1.5 2.4-2.6 4.3-3.7z" /> <path class="fill-current opacity-70" d="M11.2 11.4c3.2 0 5.8 2.6 5.8 5.8 0 1.3-.4 2.5-1.1 3.4 2.5-1.1 4.3-3.6 4.3-6.5 0-3.9-3.2-7.1-7.1-7.1-.7 0-1.4.1-2 .3 1.3.8 2.1 2.2 2.1 3.8 0 .2 0 .3-.1.5-.6-.1-1.2-.2-1.9-.2z" /> <path class="fill-current opacity-40" d="M5.1 14.7c.1.5.3 1 .6 1.5l4.1 1.7-4.7.3c.3.4.7.8 1.1 1.1l4.4-.8-3.2 2.6c.5.2 1 .4 1.5.5l3-3.3-1.1 4c.5.1 1 .1 1.5 0l.7-4.4 1.5 3.8c.5-.2.9-.5 1.3-.8l-2.1-3.7 3.4 2.1c.3-.4.5-.9.7-1.4L14 16.5l4.1-.5c0-.5 0-1-.1-1.5l-4.1.7 3.2-2.5c-.3-.4-.6-.8-1-1.1l-3.2 2.9 1.2-4.1c-.5-.2-1-.3-1.5-.3l-.8 4.2-1.6-3.8c-.5.1-1 .3-1.4.6l2.2 3.7-3.6-2c-.4.4-.7.8-.9 1.3l3.9 1.3-5.3-.7z" /> </svg>
+    <svg viewBox="0 0 24 24" class="text-blue-600 dark:text-blue-400" style="width: 32px; height: 32px;">
         <path class="fill-current opacity-100" d="M12 3L20 7.5L12 12L4 7.5Z" />
         <path class="fill-current opacity-70" d="M4 7.5L12 12L12 21L4 16.5Z" />
         <path class="fill-current opacity-40" d="M20 7.5L12 12L12 21L20 16.5Z" />
       </svg>
+
     </div>
     <h1 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-white mb-2">Welcome to Ricsian</h1>
     <p class="text-sm text-zinc-500 dark:text-zinc-400" style="max-width: 360px; margin: 0 auto;">Your provisioning engine is ready. Complete these steps to deploy your first VoxelSite instance.</p>
