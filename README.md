@@ -1,4 +1,4 @@
-# KebatoSwarm
+# RicsianSwarm
 
 **Deploy VoxelSite for everyone.**
 
