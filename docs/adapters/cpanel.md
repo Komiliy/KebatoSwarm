@@ -10,7 +10,7 @@ The cPanel adapter uses the [WHM API](https://api.docs.cpanel.net/) to create su
 - **removeSubdomain:** Removes the subdomain via WHM API
 - **pauseSubdomain / resumeSubdomain:** Currently log warnings only. The adapter does not yet switch the site into a maintenance page.
 
-SSL handling depends on your cPanel setup. VoxelSwarm does not trigger AutoSSL directly in the current adapter.
+SSL handling depends on your cPanel setup. Ricsian does not trigger AutoSSL directly in the current adapter.
 
 ## Prerequisites
 
@@ -44,7 +44,7 @@ SSL handling depends on your cPanel setup. VoxelSwarm does not trigger AutoSSL d
 
 ## Help Us Test
 
-If you're running cPanel, please test VoxelSwarm and [report any issues](https://github.com/NowSquare/VoxelSwarm/issues) with:
+If you're running cPanel, please test Ricsian and [report any issues](https://github.com/NowSquare/Ricsian/issues) with:
 - Your cPanel version
 - Hosting type (dedicated, VPS, shared, reseller)
 - Any error messages from `storage/logs/adapter-YYYY-MM-DD.log`

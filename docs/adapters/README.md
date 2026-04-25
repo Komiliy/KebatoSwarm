@@ -1,6 +1,6 @@
 # Control Panel Adapters
 
-VoxelSwarm uses an adapter system to create hosting accounts and configure your control panel. Each adapter implements the `ControlPanelAdapter` interface, making the provisioning engine panel-agnostic.
+Ricsian uses an adapter system to create hosting accounts and configure your control panel. Each adapter implements the `ControlPanelAdapter` interface, making the provisioning engine panel-agnostic.
 
 ## Available Adapters
 

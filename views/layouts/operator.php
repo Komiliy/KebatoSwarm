@@ -3,7 +3,7 @@
  * Operator layout — sidebar nav, content area.
  * Receives $content from Response::view()
  */
-$pageTitle = $pageTitle ?? 'Dashboard — VoxelSwarm';
+$pageTitle = $pageTitle ?? 'Dashboard — Ricsian';
 $currentPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 ?>
 <!DOCTYPE html>
@@ -40,7 +40,7 @@ $currentPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
           <path class="fill-current opacity-70" d="M4 7.5L12 12L12 21L4 16.5Z" />
           <path class="fill-current opacity-40" d="M20 7.5L12 12L12 21L20 16.5Z" />
         </svg>
-        <span class="font-semibold tracking-tight text-sm">VoxelSwarm</span>
+        <span class="font-semibold tracking-tight text-sm">Ricsian</span>
       </a>
       <div style="width: 36px;"></div>
     </header>
@@ -58,7 +58,7 @@ $currentPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
             <path class="fill-current opacity-70" d="M4 7.5L12 12L12 21L4 16.5Z" />
             <path class="fill-current opacity-40" d="M20 7.5L12 12L12 21L20 16.5Z" />
           </svg>
-          <span class="font-semibold tracking-tight text-sm">VoxelSwarm</span>
+          <span class="font-semibold tracking-tight text-sm">Ricsian</span>
         </a>
       </div>
 

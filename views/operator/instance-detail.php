@@ -2,10 +2,10 @@
 /**
  * Instance detail — single instance view with info cards, actions, notes, and provision logs.
  *
- * Design: follows VoxelSwarm-04-design-doc.md strictly.
- * Copy: follows VoxelSwarm-05-tone-of-voice.md.
+ * Design: follows Ricsian-04-design-doc.md strictly.
+ * Copy: follows Ricsian-05-tone-of-voice.md.
  */
-$pageTitle = htmlspecialchars($instance['name']) . ' — VoxelSwarm';
+$pageTitle = htmlspecialchars($instance['name']) . ' — Ricsian';
 $isActive = $instance['status'] === 'active';
 $isPaused = $instance['status'] === 'paused';
 $isFailed = $instance['status'] === 'failed';

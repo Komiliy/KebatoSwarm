@@ -1,6 +1,6 @@
 # Page Map
 
-This document is an implementation-derived map of the current VoxelSwarm UI. It is based on the live route table in `index.php`, controller visibility checks, and the templates in `views/`.
+This document is an implementation-derived map of the current Ricsian UI. It is based on the live route table in `index.php`, controller visibility checks, and the templates in `views/`.
 
 ## Visual Mind Model
 

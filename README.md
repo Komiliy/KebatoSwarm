@@ -2,9 +2,9 @@
 
 **Deploy VoxelSite for everyone.**
 
-VoxelSwarm is a free, open-source deployment layer that turns one [VoxelSite](https://voxelsite.com) installation into a multi-tenant platform. Each user gets their own isolated hosting account, their own AI website builder, their own API key. No SaaS. No shared infrastructure. No middlemen.
+Ricsian is a free, open-source deployment layer that turns one [VoxelSite](https://voxelsite.com) installation into a multi-tenant platform. Each user gets their own isolated hosting account, their own AI website builder, their own API key. No SaaS. No shared infrastructure. No middlemen.
 
-> ⚠️ **Early Access** — VoxelSwarm requires extensive testing across different hosting environments and control panels. Please read [docs/testing-feedback.md](docs/testing-feedback.md) before reporting issues. A regular VoxelSite license is all you need for testing.
+> ⚠️ **Early Access** — Ricsian requires extensive testing across different hosting environments and control panels. Please read [docs/testing-feedback.md](docs/testing-feedback.md) before reporting issues. A regular VoxelSite license is all you need for testing.
 
 ---
 
@@ -18,26 +18,26 @@ You could run VoxelSite as a centralized SaaS — one app, shared database, mont
 - Billing, subscriptions, churn — revenue depends on retaining paying users month to month
 - One bug affects everyone
 
-**VoxelSwarm takes a different approach.** Each client gets a full, isolated VoxelSite installation. Each brings their own AI API key. One VPS, one license, predictable costs. No billing system needed — charge per project, per month, or give it away. Your business model.
+**Ricsian takes a different approach.** Each client gets a full, isolated VoxelSite installation. Each brings their own AI API key. One VPS, one license, predictable costs. No billing system needed — charge per project, per month, or give it away. Your business model.
 
 ---
 
 ## How it works
 
-### 1. Clone VoxelSwarm
+### 1. Clone Ricsian
 
 ```bash
-git clone https://github.com/NowSquare/VoxelSwarm.git
-cd VoxelSwarm
+git clone https://github.com/NowSquare/Ricsian.git
+cd Ricsian
 ```
  
 That's it — all dependencies are included in the repo. No `composer install` or `npm install` needed.
 
 ### 2. Point your domain & open the wizard
 
-Point your domain to the VoxelSwarm directory (see [installation docs](docs/installation.md) for Nginx/Apache config).
+Point your domain to the Ricsian directory (see [installation docs](docs/installation.md) for Nginx/Apache config).
 
-Then open `https://yourdomain.com` in your browser — VoxelSwarm detects it's not installed and launches the **setup wizard** automatically.
+Then open `https://yourdomain.com` in your browser — Ricsian detects it's not installed and launches the **setup wizard** automatically.
 
 The wizard runs system checks, then lets you configure your domain, operator account, control panel adapter, and email — all from the browser. No SSH required.
 
@@ -47,13 +47,13 @@ The wizard runs system checks, then lets you configure your domain, operator acc
 
 Upload your VoxelSite ZIP (purchased from [CodeCanyon](https://voxelsite.com/buy)) to `template/voxelsite/` and process it from the **Templates** page in the operator dashboard.
 
-This extracts VoxelSite, moves the image library to a shared location (saving ~15 MB per instance), and generates the image manifest. ZIPs can have any filename — VoxelSwarm reads the `VERSION` file inside.
+This extracts VoxelSite, moves the image library to a shared location (saving ~15 MB per instance), and generates the image manifest. ZIPs can have any filename — Ricsian reads the `VERSION` file inside.
 
 > CLI alternative: `php scripts/prepare-template.php /path/to/voxelsite.zip`
 
 ### 4. Provision instances
 
-By default, VoxelSwarm runs in **operator-only mode** — `GET /` redirects to the operator login. You provision instances from the dashboard at `/operator`. When you're ready for public self-service signups, enable the public site in Deployment settings.
+By default, Ricsian runs in **operator-only mode** — `GET /` redirects to the operator login. You provision instances from the dashboard at `/operator`. When you're ready for public self-service signups, enable the public site in Deployment settings.
 
 ---
 
@@ -70,7 +70,7 @@ By default, VoxelSwarm runs in **operator-only mode** — `GET /` redirects to t
 
 ## Control Panel Adapters
 
-VoxelSwarm uses an adapter system to create hosting accounts and configure your control panel. Each adapter implements the same interface:
+Ricsian uses an adapter system to create hosting accounts and configure your control panel. Each adapter implements the same interface:
 
 | Adapter | Status | Configuration |
 |---------|--------|---------------|
@@ -84,14 +84,14 @@ VoxelSwarm uses an adapter system to create hosting accounts and configure your 
 | **HestiaCP** | 📋 Planned | [docs/adapters/hestiacp.md](docs/adapters/hestiacp.md) |
 | **CyberPanel** | 📋 Planned | [docs/adapters/cyberpanel.md](docs/adapters/cyberpanel.md) |
 
-**Missing your panel?** [Open an issue](https://github.com/NowSquare/VoxelSwarm/issues) or [contribute an adapter](#contributing).
+**Missing your panel?** [Open an issue](https://github.com/NowSquare/Ricsian/issues) or [contribute an adapter](#contributing).
 
 ---
 
 ## Architecture
 
 ```
-VoxelSwarm/
+Ricsian/
 ├── index.php                    # Front controller
 ├── src/
 │   ├── Adapters/                # Control panel adapter system
@@ -113,7 +113,7 @@ VoxelSwarm/
 
 **Two users, one platform:**
 
-- **The Operator** — installs VoxelSwarm, configures the adapter, manages instances from the dashboard
+- **The Operator** — installs Ricsian, configures the adapter, manages instances from the dashboard
 - **The Tenant** — signs up, gets a hosting account, builds their website with AI
 
 ---
@@ -137,7 +137,7 @@ VoxelSwarm/
 
 ## Licensing
 
-VoxelSwarm itself is **free and open source** (MIT License).
+Ricsian itself is **free and open source** (MIT License).
 
 To deploy instances, you need a VoxelSite license — [voxelsite.com/buy](https://voxelsite.com/buy).
 
@@ -145,9 +145,9 @@ To deploy instances, you need a VoxelSite license — [voxelsite.com/buy](https:
 
 ## Contributing
 
-VoxelSwarm is open source because the only way to make it work on every hosting environment is to let people test it on their hosting environment. Contributions are welcome:
+Ricsian is open source because the only way to make it work on every hosting environment is to let people test it on their hosting environment. Contributions are welcome:
 
-- **Report bugs** — Start with [docs/testing-feedback.md](docs/testing-feedback.md), then [open an issue](https://github.com/NowSquare/VoxelSwarm/issues)
+- **Report bugs** — Start with [docs/testing-feedback.md](docs/testing-feedback.md), then [open an issue](https://github.com/NowSquare/Ricsian/issues)
 - **Write an adapter** — See [docs/adapters/writing-an-adapter.md](docs/adapters/writing-an-adapter.md)
 - **Fix edge cases** — Every control panel has quirks. Your PR helps everyone
 - **Improve docs** — Clearer instructions save hours of debugging
@@ -159,8 +159,8 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting a pull request.
 ## Support
 
 - **Check the logs:** `storage/logs/` contains detailed, structured logs for every provisioning step, adapter call, email, and operator action. See [Testing & Feedback](docs/testing-feedback.md) and [Troubleshooting → Log Files](docs/troubleshooting.md#log-files).
-- **Report a bug:** Start with [docs/testing-feedback.md](docs/testing-feedback.md), then open an issue at [github.com/NowSquare/VoxelSwarm/issues](https://github.com/NowSquare/VoxelSwarm/issues). If you are a VoxelSite customer and prefer not to share logs publicly, you can also use [VoxelSite support](https://codecanyon.net/item/voxelsite-ai-website-generator-selfhosted-own-your-files/62090509/support).
-- **VoxelSite:** [voxelsite.com](https://voxelsite.com) — for VoxelSite-specific issues (the AI builder, not VoxelSwarm)
+- **Report a bug:** Start with [docs/testing-feedback.md](docs/testing-feedback.md), then open an issue at [github.com/NowSquare/Ricsian/issues](https://github.com/NowSquare/Ricsian/issues). If you are a VoxelSite customer and prefer not to share logs publicly, you can also use [VoxelSite support](https://codecanyon.net/item/voxelsite-ai-website-generator-selfhosted-own-your-files/62090509/support).
+- **VoxelSite:** [voxelsite.com](https://voxelsite.com) — for VoxelSite-specific issues (the AI builder, not Ricsian)
 - **Multi-Site:** [voxelsite.com/multi-site](https://voxelsite.com/multi-site)
 
 ---
@@ -169,8 +169,8 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting a pull request.
 
 MIT — see [LICENSE](LICENSE).
 
-VoxelSite is a separate commercial product. VoxelSwarm is a deployment layer for VoxelSite, not a fork or redistribution.
+VoxelSite is a separate commercial product. Ricsian is a deployment layer for VoxelSite, not a fork or redistribution.
 
 ---
 
-*VoxelSite builds the website. VoxelSwarm puts it in front of the world.*
+*VoxelSite builds the website. Ricsian puts it in front of the world.*

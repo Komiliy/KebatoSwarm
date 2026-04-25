@@ -1,15 +1,15 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* VoxelSwarm design tokens — extends Tailwind with Precision SaaS palette */
+/* Ricsian design tokens — extends Tailwind with Precision SaaS palette */
 @theme {
   --color-sw-bg: #FAFAFA;
   --color-sw-surface: #FFFFFF;
   --color-sw-border: #E4E4E7;
   --color-sw-text: #09090B;
   --color-sw-muted: #71717A;
-  --color-sw-accent: #EA580C;
-  --color-sw-accent-hover: #C2410C;
+  --color-sw-accent: #2563eb;
+  --color-sw-accent-hover: #1d4ed8;
   --color-sw-success: #16A34A;
   --color-sw-warning: #D97706;
   --color-sw-error: #DC2626;

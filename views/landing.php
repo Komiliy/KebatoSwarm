@@ -11,7 +11,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VoxelSwarm — Your website, live in 30 seconds</title>
+  <title>Ricsian — Your website, live in 30 seconds</title>
   <meta name="description" content="Enter a name and email. Get a live website at its own subdomain in under 30 seconds. AI builds it. You own the files.">
   <link rel="stylesheet" href="/fonts/inter/inter.css">
   <link rel="stylesheet" href="/build/swarm.css">
@@ -550,7 +550,7 @@
         <path class="voxel-left" d="M4 7.5L12 12L12 21L4 16.5Z" />
         <path class="voxel-right" d="M20 7.5L12 12L12 21L20 16.5Z" />
       </svg>
-      <span>VoxelSwarm</span>
+      <span>Ricsian</span>
     </a>
     <div class="sw-nav-links">
       <a href="/operator/login" class="sw-nav-link">Operator</a>
@@ -598,10 +598,10 @@
   <!-- ── Value Props ── -->
   <section class="sw-section">
     <div class="sw-reveal">
-      <div class="sw-section-label">Why VoxelSwarm</div>
+      <div class="sw-section-label">Why Ricsian</div>
       <h2 class="sw-section-title">Everything between "I signed up"<br>and "I have a website" — gone.</h2>
       <p class="sw-section-sub">
-        VoxelSite builds the website. VoxelSwarm puts it in front of the world.
+        VoxelSite builds the website. Ricsian puts it in front of the world.
       </p>
     </div>
 
@@ -675,7 +675,7 @@
           <div class="sw-section-label" style="text-align:left;">For operators</div>
           <h3>Run VoxelSite as a service</h3>
           <p>
-            Install VoxelSwarm on any VPS. Provision instances for clients, students, or your agency portfolio.
+            Install Ricsian on any VPS. Provision instances for clients, students, or your agency portfolio.
             Plain PHP, SQLite, two Composer dependencies. Ships as a ZIP.
           </p>
           <ul class="sw-feature-list">
@@ -740,7 +740,7 @@
 
   <!-- ── Footer ── -->
   <footer class="sw-footer">
-    VoxelSwarm v<?= SWARM_VERSION ?> · Plain PHP. SQLite. Your files. ·
+    Ricsian v<?= SWARM_VERSION ?> · Plain PHP. SQLite. Your files. ·
     <a href="/operator/login">Operator Login</a>
   </footer>
 

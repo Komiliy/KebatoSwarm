@@ -59,9 +59,9 @@ class Mailer
         try {
             self::send(
                 to:      $to,
-                subject: 'VoxelSwarm — Test Email',
+                subject: 'Ricsian — Test Email',
                 body:    '<h2>It works.</h2><p>Your email configuration is correct.</p>',
-                altBody: 'VoxelSwarm test email — your configuration is correct.'
+                altBody: 'Ricsian test email — your configuration is correct.'
             );
             return true;
         } catch (\Throwable $e) {
@@ -98,7 +98,7 @@ class Mailer
         $mail->SMTPSecure = $config['encryption']   ?? PHPMailer::ENCRYPTION_STARTTLS;
 
         $fromEmail = $config['from_address'] ?? Setting::get('operator_email', 'noreply@example.com');
-        $fromName  = $config['from_name']    ?? 'VoxelSwarm';
+        $fromName  = $config['from_name']    ?? 'Ricsian';
         $mail->setFrom($fromEmail, $fromName);
 
         $mail->addAddress($to);

@@ -71,11 +71,11 @@ Set email driver to `log` in Deployment → Notifications. Emails are written to
 
 ### Database locked errors
 
-VoxelSwarm uses SQLite with WAL mode. If you see "database is locked" errors:
+Ricsian uses SQLite with WAL mode. If you see "database is locked" errors:
 
 1. Ensure only one server process accesses the database at a time
 2. Check that `storage/swarm.db-wal` and `storage/swarm.db-shm` files exist (WAL mode)
-3. SQLite handles VoxelSwarm's concurrency profile (rate-limited signups, single provisioning) easily
+3. SQLite handles Ricsian's concurrency profile (rate-limited signups, single provisioning) easily
 
 ### Resetting the database
 
@@ -85,7 +85,7 @@ VoxelSwarm uses SQLite with WAL mode. If you see "database is locked" errors:
 rm storage/swarm.db
 ```
 
-After this, opening VoxelSwarm in your browser will redirect to the web install wizard. Alternatively, re-run the CLI: `php scripts/install.php`
+After this, opening Ricsian in your browser will redirect to the web install wizard. Alternatively, re-run the CLI: `php scripts/install.php`
 
 You can also use the operator dashboard: System → Danger Zone → Reset Installation.
 
@@ -93,7 +93,7 @@ You can also use the operator dashboard: System → Danger Zone → Reset Instal
 
 ### Stuck on "Redirecting to /install"
 
-The install guard redirects all requests to `/install` when VoxelSwarm is not installed. If the wizard page doesn't load:
+The install guard redirects all requests to `/install` when Ricsian is not installed. If the wizard page doesn't load:
 
 1. Check that your web server routes all requests to `index.php`
 2. Verify PHP is running: `php -v`
@@ -113,7 +113,7 @@ sudo dnf install php-pdo php-mbstring php-curl php-zip
 
 Restart PHP-FPM or Apache after installing extensions.
 
-### Installation fails at "Setting up VoxelSwarm"
+### Installation fails at "Setting up Ricsian"
 
 Check the browser console for error details. Common causes:
 - `storage/` not writable — fix with `chmod -R 775 storage/`
@@ -124,7 +124,7 @@ Check the browser console for error details. Common causes:
 
 ## Log Files
 
-VoxelSwarm logs every significant operation to structured, plaintext log files. When something goes wrong, these files are your first stop — and the most helpful thing you can include when reporting an issue.
+Ricsian logs every significant operation to structured, plaintext log files. When something goes wrong, these files are your first stop — and the most helpful thing you can include when reporting an issue.
 
 ### Where logs live
 
@@ -172,7 +172,7 @@ Levels: `INFO` (normal operations), `WARNING` (non-fatal issues — email failur
 
 ## Reporting an Issue
 
-VoxelSwarm runs on hosting environments we can't all test ourselves — your bug reports keep the project alive. A well-structured report saves hours of back-and-forth.
+Ricsian runs on hosting environments we can't all test ourselves — your bug reports keep the project alive. A well-structured report saves hours of back-and-forth.
 
 Prefer [testing-feedback.md](testing-feedback.md) as the canonical reporting guide. This section remains as a troubleshooting-oriented checklist.
 
@@ -184,12 +184,12 @@ Prefer [testing-feedback.md](testing-feedback.md) as the canonical reporting gui
 
 ### What to include
 
-Open an issue at [github.com/NowSquare/VoxelSwarm/issues](https://github.com/NowSquare/VoxelSwarm/issues) with:
+Open an issue at [github.com/NowSquare/Ricsian/issues](https://github.com/NowSquare/Ricsian/issues) with:
 
 **1. Environment**
 
 ```
-VoxelSwarm version: (check VERSION file or System page)
+Ricsian version: (check VERSION file or System page)
 PHP version: (php -v)
 Web server: (Nginx / Apache / LiteSpeed / etc.)
 OS: (Ubuntu 22.04 / CentOS 9 / etc.)
@@ -197,7 +197,7 @@ Control panel: (None / Forge / cPanel / Plesk / etc.)
 Adapter: (Local / Nginx / Forge / cPanel / Plesk)
 ```
 
-You can find your VoxelSwarm version and PHP version on the System page (`/operator/system`).
+You can find your Ricsian version and PHP version on the System page (`/operator/system`).
 
 **2. What happened**
 
@@ -232,7 +232,7 @@ Log files may contain hostnames, email addresses, and API endpoint URLs. They do
 
 If you are a VoxelSite customer and prefer not to post logs in public, you can also send them through [VoxelSite support](https://codecanyon.net/item/voxelsite-ai-website-generator-selfhosted-own-your-files/62090509/support).
 
-### VoxelSite vs. VoxelSwarm issues
+### VoxelSite vs. Ricsian issues
 
-- **VoxelSwarm issue:** Provisioning fails, adapter errors, dashboard bugs, email delivery, subdomain routing → report on [VoxelSwarm](https://github.com/NowSquare/VoxelSwarm/issues)
+- **Ricsian issue:** Provisioning fails, adapter errors, dashboard bugs, email delivery, subdomain routing → report on [Ricsian](https://github.com/NowSquare/Ricsian/issues)
 - **VoxelSite issue:** The AI builder itself, template rendering, Studio bugs → report on [VoxelSite support](https://voxelsite.com/support)

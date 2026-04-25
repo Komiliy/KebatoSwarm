@@ -1,17 +1,17 @@
 # Testing And Feedback
 
-VoxelSwarm is still early-stage software. It needs real-world testing across hosting providers, control panels, PHP setups, DNS configurations, and server permission models.
+Ricsian is still early-stage software. It needs real-world testing across hosting providers, control panels, PHP setups, DNS configurations, and server permission models.
 
 That means two things are true at the same time:
 
 - You should expect to find edge cases and environment-specific failures.
 - Those failures are only fixable if the report includes enough information.
 
-This page explains how testing is supposed to work, why VoxelSwarm includes extended logging, and what to send when something breaks.
+This page explains how testing is supposed to work, why Ricsian includes extended logging, and what to send when something breaks.
 
 ## Why We Need Testing
 
-VoxelSwarm provisions and manages full VoxelSite instances across environments that behave differently:
+Ricsian provisions and manages full VoxelSite instances across environments that behave differently:
 
 - raw VPS setups
 - local filesystem deployments
@@ -32,13 +32,13 @@ Even when the provisioning flow is correct in one environment, another environme
 So the project improves in a loop:
 
 1. You test on a real environment.
-2. VoxelSwarm logs what happened.
+2. Ricsian logs what happened.
 3. You send the logs and environment details.
 4. We investigate and fix the issue when there is enough information.
 
 ## What To Expect
 
-If you are testing VoxelSwarm today, assume:
+If you are testing Ricsian today, assume:
 
 - some environments will work immediately
 - some environments will need small fixes
@@ -49,7 +49,7 @@ This does not mean the app is unreliable everywhere. It means the project is sti
 
 ## Why Logging Is Built In
 
-VoxelSwarm writes detailed plaintext logs for the exact reason above: when something fails, the log trail usually shows where and why.
+Ricsian writes detailed plaintext logs for the exact reason above: when something fails, the log trail usually shows where and why.
 
 The main channels are:
 
@@ -92,7 +92,7 @@ Open an issue and include all of the following when possible.
 
 Include:
 
-- VoxelSwarm version
+- Ricsian version
 - PHP version
 - operating system
 - web server
@@ -102,7 +102,7 @@ Include:
 Example:
 
 ```text
-VoxelSwarm version: 0.3.0
+Ricsian version: 0.3.0
 PHP version: 8.5.2
 OS: Ubuntu 24.04
 Web server: Nginx
@@ -117,7 +117,7 @@ Say what you did in order, not just the final symptom.
 Good:
 
 ```text
-1. Installed VoxelSwarm
+1. Installed Ricsian
 2. Set adapter to cPanel
 3. Tested the adapter successfully
 4. Processed a VoxelSite ZIP
@@ -209,17 +209,17 @@ If you are a VoxelSite customer and would rather not post logs in a public GitHu
 
 Open an issue on GitHub:
 
-[github.com/NowSquare/VoxelSwarm/issues](https://github.com/NowSquare/VoxelSwarm/issues)
+[github.com/NowSquare/Ricsian/issues](https://github.com/NowSquare/Ricsian/issues)
 
 Alternative:
 
 - If you are a VoxelSite customer and prefer not to share logs in public, use [VoxelSite support](https://codecanyon.net/item/voxelsite-ai-website-generator-selfhosted-own-your-files/62090509/support).
 
-If the issue turns out to be inside VoxelSite itself rather than VoxelSwarm's provisioning/deployment layer, use VoxelSite support instead.
+If the issue turns out to be inside VoxelSite itself rather than Ricsian's provisioning/deployment layer, use VoxelSite support instead.
 
 ## In Short
 
-The testing model for VoxelSwarm is:
+The testing model for Ricsian is:
 
 - early-stage software
 - real-world testing needed

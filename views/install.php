@@ -1,11 +1,11 @@
 <?php
 /**
- * VoxelSwarm — Web Installation Wizard
+ * Ricsian — Web Installation Wizard
  *
  * Self-contained page (no layout). Multi-step form powered by Alpine.js.
  * Steps: System Check → Configuration → Adapter → Complete
  */
-$pageTitle = 'Install — VoxelSwarm';
+$pageTitle = 'Install — Ricsian';
 ?>
 <!DOCTYPE html>
 <html lang="en" class="dark">
@@ -61,7 +61,7 @@ $pageTitle = 'Install — VoxelSwarm';
           <rect x="4" y="22" width="14" height="14" rx="3" fill="currentColor" opacity="0.6"/>
           <rect x="22" y="22" width="14" height="14" rx="3" fill="currentColor" opacity="0.3"/>
         </svg>
-        <span class="text-2xl font-bold tracking-tight">VoxelSwarm</span>
+        <span class="text-2xl font-bold tracking-tight">Ricsian</span>
       </div>
       <p class="text-sm text-zinc-400">Setup wizard · <span x-text="'Step ' + step + ' of 3'"></span></p>
     </div>
@@ -265,7 +265,7 @@ $pageTitle = 'Install — VoxelSwarm';
             </div>
             <div>
               <label class="install-label">From Name</label>
-              <input type="text" class="install-input" x-model="form.mail_config.from_name" placeholder="VoxelSwarm">
+              <input type="text" class="install-input" x-model="form.mail_config.from_name" placeholder="Ricsian">
             </div>
           </div>
         </div>
@@ -279,7 +279,7 @@ $pageTitle = 'Install — VoxelSwarm';
             Back
           </button>
           <button class="install-btn install-btn-primary" @click="nextStep()">
-            Install VoxelSwarm
+            Install Ricsian
             <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
           </button>
         </div>
@@ -296,7 +296,7 @@ $pageTitle = 'Install — VoxelSwarm';
         <!-- Installing -->
         <div x-show="installing" class="flex flex-col items-center py-8 gap-4">
           <div class="spinner" style="width: 32px; height: 32px; border-width: 3px;"></div>
-          <p class="text-sm text-zinc-400">Setting up VoxelSwarm...</p>
+          <p class="text-sm text-zinc-400">Setting up Ricsian...</p>
         </div>
 
         <!-- Success -->
@@ -305,7 +305,7 @@ $pageTitle = 'Install — VoxelSwarm';
             <svg class="w-8 h-8 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
           <h3 class="text-xl font-bold mb-2">You're all set!</h3>
-          <p class="text-sm text-zinc-400 mb-6">VoxelSwarm v<?= SWARM_VERSION ?> is installed and ready.</p>
+          <p class="text-sm text-zinc-400 mb-6">Ricsian v<?= SWARM_VERSION ?> is installed and ready.</p>
 
           <div class="bg-zinc-950 rounded-xl border border-zinc-800 p-4 text-left text-sm space-y-2 mb-6">
             <p class="text-zinc-400"><span class="text-zinc-500 font-medium">Next steps:</span></p>
@@ -335,7 +335,7 @@ $pageTitle = 'Install — VoxelSwarm';
     </div>
 
     <!-- Footer -->
-    <p class="text-center text-xs text-zinc-600 mt-8">VoxelSwarm v<?= SWARM_VERSION ?> · MIT License · <a href="https://github.com/NowSquare/VoxelSwarm" target="_blank" class="hover:text-zinc-400 transition-colors">GitHub</a></p>
+    <p class="text-center text-xs text-zinc-600 mt-8">Ricsian v<?= SWARM_VERSION ?> · MIT License · <a href="https://github.com/NowSquare/Ricsian" target="_blank" class="hover:text-zinc-400 transition-colors">GitHub</a></p>
 
   </div>
 </div>
@@ -360,7 +360,7 @@ function installWizard() {
       adapter: 'local',
       adapter_config: {},
       mail_driver: 'log',
-      mail_config: { host: '', port: '587', username: '', smtp_password: '', from_address: '', from_name: 'VoxelSwarm' },
+      mail_config: { host: '', port: '587', username: '', smtp_password: '', from_address: '', from_name: 'Ricsian' },
     },
 
     init() {

@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /**
- * VoxelSwarm — Bootstrap
+ * Ricsian — Bootstrap
  *
  * Loaded by the front controller (public/index.php) and CLI scripts.
  * Sets up autoloading, error handling, config, and database connection.
@@ -95,7 +95,7 @@ if (php_sapi_name() !== 'cli' && session_status() === PHP_SESSION_NONE) {
 }
 
 /**
- * Quick helper: is VoxelSwarm installed?
+ * Quick helper: is Ricsian installed?
  * Checks if the database has at least the settings table with an installed_at value.
  */
 function isInstalled(): bool

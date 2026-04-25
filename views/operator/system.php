@@ -2,11 +2,11 @@
 /**
  * System page — runtime info, updates, server logs, danger zone.
  *
- * Every element follows the design system in .ai/VoxelSwarm-04-design-doc.md.
+ * Every element follows the design system in .ai/Ricsian-04-design-doc.md.
  * Icon alignment uses inline-flex + items-center on button wrappers.
  * Log table uses alternating row backgrounds for premium readability.
  */
-$pageTitle = 'System — VoxelSwarm';
+$pageTitle = 'System — Ricsian';
 
 $cardClass   = "bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800/80 rounded-xl shadow-sm dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] overflow-hidden";
 $headerClass = "px-6 py-4 border-b border-zinc-100 dark:border-zinc-800/80 bg-zinc-50/50 dark:bg-zinc-800/20";
@@ -33,7 +33,7 @@ $valueClass  = "text-sm font-semibold text-zinc-900 dark:text-white mt-1";
       <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
         <?php
         $sysRows = [
-          ['VoxelSwarm', SWARM_VERSION],
+          ['Ricsian', SWARM_VERSION],
           ['PHP', PHP_VERSION],
           ['SQLite', \SQLite3::version()['versionString'] ?? '?'],
           ['Database', file_exists(SWARM_DB_PATH) ? round(filesize(SWARM_DB_PATH) / 1024, 1) . ' KB' : '—'],
@@ -86,7 +86,7 @@ $valueClass  = "text-sm font-semibold text-zinc-900 dark:text-white mt-1";
           </div>
           <div id="git-pull-output" class="hidden mt-3 p-3 rounded-lg bg-zinc-950 dark:bg-zinc-950 border border-zinc-800 text-xs font-mono text-zinc-300" style="white-space: pre-wrap; max-height: 12rem; overflow-y: auto;"></div>
         <?php else: ?>
-          <p class="text-xs text-zinc-500 dark:text-zinc-400">Not a Git repository. Clone from <code class="text-xs bg-zinc-100 dark:bg-zinc-800 px-1 py-0.5 rounded">https://github.com/NowSquare/VoxelSwarm</code> to enable Git updates.</p>
+          <p class="text-xs text-zinc-500 dark:text-zinc-400">Not a Git repository. Clone from <code class="text-xs bg-zinc-100 dark:bg-zinc-800 px-1 py-0.5 rounded">https://github.com/NowSquare/Ricsian</code> to enable Git updates.</p>
         <?php endif; ?>
       </div>
 

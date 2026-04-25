@@ -1,21 +1,21 @@
 # Template Preparation
 
-Before VoxelSwarm can provision instances, you must prepare a VoxelSite template. This takes a VoxelSite ZIP file and optimizes it for multi-instance deployment.
+Before Ricsian can provision instances, you must prepare a VoxelSite template. This takes a VoxelSite ZIP file and optimizes it for multi-instance deployment.
 
 ## Why?
 
 VoxelSite ships with an `assets/library/` directory (~15 MB of curated images used by the AI during site generation). Duplicating this into every instance wastes storage — 100 instances = 1.5 GB of identical images.
 
-VoxelSwarm solves this by hosting the image library once in a centralized `library/` directory, served statically. Each instance receives a `library.json` manifest instead of the physical files.
+Ricsian solves this by hosting the image library once in a centralized `library/` directory, served statically. Each instance receives a `library.json` manifest instead of the physical files.
 
 ## ZIP File Naming
 
-VoxelSite ZIPs can have any filename. VoxelSwarm reads the `VERSION` file inside the ZIP to determine the version — it does **not** parse the filename. Both of these work:
+VoxelSite ZIPs can have any filename. Ricsian reads the `VERSION` file inside the ZIP to determine the version — it does **not** parse the filename. Both of these work:
 
 - `voxelsite-v1.8.0.zip`
 - `codecanyon-yi8z1J7A-voxelsite-ai-website-generator-selfhosted-own-your-files.zip`
 
-If no `VERSION` file is found inside the ZIP, VoxelSwarm falls back to parsing the filename (e.g., extracting `1.8.0` from `voxelsite-v1.8.0.zip`).
+If no `VERSION` file is found inside the ZIP, Ricsian falls back to parsing the filename (e.g., extracting `1.8.0` from `voxelsite-v1.8.0.zip`).
 
 ## Via Operator Dashboard (recommended)
 
@@ -24,7 +24,7 @@ The easiest way to manage templates is through the operator dashboard:
 1. Upload your VoxelSite ZIP to `template/voxelsite/` via FTP/SFTP/SSH
 2. Visit `/operator/templates` in the dashboard
 3. You'll see your ZIP listed under "Available ZIPs"
-4. Click **Process** — VoxelSwarm extracts it, reads the VERSION file, prepares the template, and activates it
+4. Click **Process** — Ricsian extracts it, reads the VERSION file, prepares the template, and activates it
 5. If the version already exists, you'll get a clear message
 
 From the dashboard you can also:
@@ -66,7 +66,7 @@ php scripts/prepare-template.php --regenerate
 
 ## Version Management
 
-VoxelSwarm supports multiple VoxelSite versions simultaneously:
+Ricsian supports multiple VoxelSite versions simultaneously:
 
 ```
 template/voxelsite/

@@ -39,7 +39,7 @@ class CyberPanelAdapter implements ControlPanelAdapter
         // POST to https://hostname:8090/api/createChildDomain
         throw new \RuntimeException(
             'CyberPanel adapter is not yet implemented. ' .
-            'Contributions welcome: https://github.com/NowSquare/VoxelSwarm/issues'
+            'Contributions welcome: https://github.com/NowSquare/Ricsian/issues'
         );
     }
 

@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /**
- * VoxelSwarm — Template Preparation Script
+ * Ricsian — Template Preparation Script
  *
  * Prepares a VoxelSite ZIP for Swarm deployment:
  *   1. Extracts the VoxelSite ZIP into a versioned directory under template/voxelsite/
@@ -44,7 +44,7 @@ function success(string $msg): void { echo "  \033[0;32m✓\033[0m {$msg}\n"; }
 function warn(string $msg): void { echo "  \033[0;33m!\033[0m {$msg}\n"; }
 function fail(string $msg): void { echo "  \033[0;31m✗\033[0m {$msg}\n"; exit(1); }
 
-echo "\n\033[1mVoxelSwarm — Template Preparation\033[0m\n";
+echo "\n\033[1mRicsian — Template Preparation\033[0m\n";
 echo "────────────────────────────────────────\n\n";
 
 // ── Parse arguments ──

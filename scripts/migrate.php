@@ -4,7 +4,7 @@
 declare(strict_types=1);
 
 /**
- * VoxelSwarm — Migration Runner
+ * Ricsian — Migration Runner
  *
  * Runs all pending SQL migrations from the migrations/ directory.
  * Tracks executed migrations in a _migrations table. Idempotent.
@@ -15,7 +15,7 @@ declare(strict_types=1);
 // Bootstrap (defines SWARM_ROOT, SWARM_STORAGE, etc.)
 require_once __DIR__ . '/../src/bootstrap.php';
 
-echo "VoxelSwarm — Migration Runner\n";
+echo "Ricsian — Migration Runner\n";
 echo str_repeat('─', 40) . "\n\n";
 
 $migrationsDir = SWARM_ROOT . '/migrations';

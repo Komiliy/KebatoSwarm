@@ -40,7 +40,7 @@ SSL is handled via Plesk's built-in Let's Encrypt integration.
 
 ## Help Us Test
 
-If you're running Plesk, please test VoxelSwarm and [report any issues](https://github.com/NowSquare/VoxelSwarm/issues) with:
+If you're running Plesk, please test Ricsian and [report any issues](https://github.com/NowSquare/Ricsian/issues) with:
 - Your Plesk version and edition
 - Server OS
 - Any error messages from `storage/logs/adapter-YYYY-MM-DD.log`

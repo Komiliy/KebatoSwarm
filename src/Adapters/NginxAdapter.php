@@ -25,7 +25,7 @@ class NginxAdapter implements ControlPanelAdapter
     public function __construct(array $config)
     {
         $this->confDir     = $config['conf_dir']      ?? '/etc/nginx/conf.d';
-        $this->reloadCmd   = $config['reload_cmd']     ?? 'sudo /usr/local/bin/voxelswarm-nginx-reload';
+        $this->reloadCmd   = $config['reload_cmd']     ?? 'sudo /usr/local/bin/Ricsian-nginx-reload';
         $this->sslCertPath = $config['ssl_cert_path']  ?? '';
         $this->sslKeyPath  = $config['ssl_key_path']   ?? '';
         $this->baseDomain  = Setting::get('base_domain', 'localhost');

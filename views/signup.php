@@ -3,7 +3,7 @@
  * Signup page — the homepage.
  * Two fields: Name, Email. Submit: "Create My Workspace."
  */
-$pageTitle = 'VoxelSwarm — Create Your Workspace';
+$pageTitle = 'Ricsian — Create Your Workspace';
 ?>
 <div class="sw-card">
 
@@ -14,7 +14,7 @@ $pageTitle = 'VoxelSwarm — Create Your Workspace';
       <path class="voxel-left" d="M4 7.5L12 12L12 21L4 16.5Z" />
       <path class="voxel-right" d="M20 7.5L12 12L12 21L20 16.5Z" />
     </svg>
-    <span class="sw-logo-text">VoxelSwarm</span>
+    <span class="sw-logo-text">Ricsian</span>
   </div>
 
   <?php if ($signupsEnabled): ?>

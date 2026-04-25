@@ -1,6 +1,6 @@
 # CloudPanel Adapter
 
-**Status:** 📋 Planned — not yet implemented. [Contribute this adapter →](https://github.com/NowSquare/VoxelSwarm/issues)
+**Status:** 📋 Planned — not yet implemented. [Contribute this adapter →](https://github.com/NowSquare/Ricsian/issues)
 
 ## Overview
 
@@ -26,5 +26,5 @@ If you're running CloudPanel and would like to implement this adapter:
 
 1. See [Writing an Adapter](writing-an-adapter.md) for the complete guide
 2. CloudPanel offers both CLI tools and a REST API
-3. [Open an issue](https://github.com/NowSquare/VoxelSwarm/issues) to coordinate before starting
+3. [Open an issue](https://github.com/NowSquare/Ricsian/issues) to coordinate before starting
 4. Submit a PR with your implementation + this doc updated

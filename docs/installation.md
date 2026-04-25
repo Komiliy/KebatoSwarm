@@ -16,25 +16,25 @@
 
 No MySQL. No Node.js. No Redis. No Composer on the server.
 
-## Step 1: Clone VoxelSwarm
+## Step 1: Clone Ricsian
 
 ```bash
-git clone https://github.com/NowSquare/VoxelSwarm.git
-cd VoxelSwarm
+git clone https://github.com/NowSquare/Ricsian.git
+cd Ricsian
 ```
 
 If you downloaded the ZIP instead:
 
 ```bash
-unzip voxelswarm.zip -d VoxelSwarm
-cd VoxelSwarm
+unzip Ricsian.zip -d Ricsian
+cd Ricsian
 ```
 
 All Composer dependencies are included in the `vendor/` directory. **No `composer install` needed.** The repo works out of the box.
 
 ## Step 2: Point Your Domain
 
-Point your domain to the VoxelSwarm directory before running the installer.
+Point your domain to the Ricsian directory before running the installer.
 
 ### Nginx
 
@@ -42,7 +42,7 @@ Point your domain to the VoxelSwarm directory before running the installer.
 server {
     listen 80;
     server_name yourdomain.com;
-    root /path/to/VoxelSwarm;
+    root /path/to/Ricsian;
     index index.php;
 
     location / {
@@ -67,7 +67,7 @@ Link the directory in Herd and visit `https://voxelsite-swarm.test`.
 
 ## Step 3: Run the Setup Wizard
 
-Open `https://yourdomain.com` in your browser. VoxelSwarm detects that it's not yet installed and redirects you to the **web-based setup wizard**.
+Open `https://yourdomain.com` in your browser. Ricsian detects that it's not yet installed and redirects you to the **web-based setup wizard**.
 
 The wizard walks you through:
 1. **System check** — PHP version, extensions, directory permissions
@@ -116,11 +116,11 @@ If you want public self-service signups later, enable `Show landing page` and `A
 
 ## For Developers Only
 
-If you want to modify VoxelSwarm's CSS or JavaScript (the compiled `build/` assets), you'll need Node.js and npm:
+If you want to modify Ricsian's CSS or JavaScript (the compiled `build/` assets), you'll need Node.js and npm:
 
 ```bash
 npm install
 npm run dev    # Vite watch mode for Tailwind + Alpine.js
 ```
 
-This is **not required** for running VoxelSwarm. The `build/` directory already contains pre-compiled CSS and JS. Only run this if you're contributing to VoxelSwarm's UI or developing the deployment/adapter interface.
+This is **not required** for running Ricsian. The `build/` directory already contains pre-compiled CSS and JS. Only run this if you're contributing to Ricsian's UI or developing the deployment/adapter interface.

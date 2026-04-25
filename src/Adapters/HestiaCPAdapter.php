@@ -37,7 +37,7 @@ class HestiaCPAdapter implements ControlPanelAdapter
         // cmd=v-add-web-domain&user=admin&domain=slug.baseDomain
         throw new \RuntimeException(
             'HestiaCP adapter is not yet implemented. ' .
-            'Contributions welcome: https://github.com/NowSquare/VoxelSwarm/issues'
+            'Contributions welcome: https://github.com/NowSquare/Ricsian/issues'
         );
     }
 

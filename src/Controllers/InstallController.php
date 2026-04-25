@@ -12,7 +12,7 @@ use Swarm\Models\Setting;
 /**
  * InstallController — Web-based setup wizard.
  *
- * Only accessible when VoxelSwarm is not yet installed.
+ * Only accessible when Ricsian is not yet installed.
  * Once installation completes, these routes become inaccessible.
  *
  * GET  /install              — Show the install wizard

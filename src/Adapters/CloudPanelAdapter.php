@@ -31,7 +31,7 @@ class CloudPanelAdapter implements ControlPanelAdapter
         // TODO: Implement via CloudPanel API or CLI
         throw new \RuntimeException(
             'CloudPanel adapter is not yet implemented. ' .
-            'Contributions welcome: https://github.com/NowSquare/VoxelSwarm/issues'
+            'Contributions welcome: https://github.com/NowSquare/Ricsian/issues'
         );
     }
 

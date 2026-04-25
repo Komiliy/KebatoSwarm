@@ -1,17 +1,17 @@
 # MemberPress + n8n Provisioning
 
-Use this integration when WordPress and MemberPress handle the public site, billing, and user accounts while VoxelSwarm provisions workspaces.
+Use this integration when WordPress and MemberPress handle the public site, billing, and user accounts while Ricsian provisions workspaces.
 
 ## Flow
 
-MemberPress webhook -> n8n -> VoxelSwarm POST /api/provision -> workspace
+MemberPress webhook -> n8n -> Ricsian POST /api/provision -> workspace
 
-## Configure VoxelSwarm API Token
+## Configure Ricsian API Token
 
-On the VoxelSwarm server:
+On the Ricsian server:
 
 ```bash
-cd /var/www/voxelswarm
+cd /var/www/Ricsian
 php -r "require 'src/bootstrap.php'; Swarm\Models\Setting::set('api_token', bin2hex(random_bytes(32))); echo Swarm\Models\Setting::get('api_token') . PHP_EOL;"
 ```
 
@@ -34,7 +34,7 @@ https://ricsian.com/api/provision
 Headers:
 
 ```text
-Authorization: Bearer YOUR_VOXELSWARM_API_TOKEN
+Authorization: Bearer YOUR_Ricsian_API_TOKEN
 Content-Type: application/json
 ```
 
@@ -54,7 +54,7 @@ Body:
 
 Adjust field paths to match the actual MemberPress webhook payload shown in n8n.
 
-## VoxelSwarm Response
+## Ricsian Response
 
 Success returns `202 Accepted`:
 

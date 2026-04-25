@@ -1,6 +1,6 @@
 # Writing a Custom Adapter
 
-VoxelSwarm's adapter system is designed to be extensible. If your control panel isn't supported yet, you can write an adapter in about 100-200 lines of PHP.
+Ricsian's adapter system is designed to be extensible. If your control panel isn't supported yet, you can write an adapter in about 100-200 lines of PHP.
 
 ## The Interface
 

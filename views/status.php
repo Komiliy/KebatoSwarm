@@ -3,7 +3,7 @@
  * Status page — provisioning progress screen.
  * Polls /api/status/{id} every 2 seconds via vanilla JS.
  */
-$pageTitle = 'Setting up your workspace — VoxelSwarm';
+$pageTitle = 'Setting up your workspace — Ricsian';
 ?>
 <div class="sw-card" style="text-align:center;">
 

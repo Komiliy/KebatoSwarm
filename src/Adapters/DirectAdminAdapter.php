@@ -37,7 +37,7 @@ class DirectAdminAdapter implements ControlPanelAdapter
         // domain=baseDomain&subdomain=slug&action=create
         throw new \RuntimeException(
             'DirectAdmin adapter is not yet implemented. ' .
-            'Contributions welcome: https://github.com/NowSquare/VoxelSwarm/issues'
+            'Contributions welcome: https://github.com/NowSquare/Ricsian/issues'
         );
     }
 

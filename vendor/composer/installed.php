@@ -1,6 +1,6 @@
 <?php return array(
     'root' => array(
-        'name' => 'voxelsite/voxelswarm',
+        'name' => 'voxelsite/Ricsian',
         'pretty_version' => '1.0.0+no-version-set',
         'version' => '1.0.0.0',
         'reference' => null,
@@ -28,7 +28,7 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
-        'voxelsite/voxelswarm' => array(
+        'voxelsite/Ricsian' => array(
             'pretty_version' => '1.0.0+no-version-set',
             'version' => '1.0.0.0',
             'reference' => null,

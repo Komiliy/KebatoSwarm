@@ -2,10 +2,10 @@
 /**
  * Account page — operator identity and credentials.
  *
- * Design: VoxelSwarm-04-design-doc.md
- * Copy: VoxelSwarm-05-tone-of-voice.md
+ * Design: Ricsian-04-design-doc.md
+ * Copy: Ricsian-05-tone-of-voice.md
  */
-$pageTitle = 'Account — VoxelSwarm';
+$pageTitle = 'Account — Ricsian';
 $s = $settings;
 
 $inputClass  = "block w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-950 px-3 py-2 text-sm text-zinc-900 dark:text-white placeholder-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-shadow";

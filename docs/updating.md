@@ -1,18 +1,18 @@
-# Updating VoxelSwarm
+# Updating Ricsian
 
-VoxelSwarm updates ship as a full replacement. No in-app update mechanism — you update via FTP, SSH, or Git pull.
+Ricsian updates ship as a full replacement. No in-app update mechanism — you update via FTP, SSH, or Git pull.
 
 ## Via Git (recommended)
 
 ```bash
-cd /path/to/VoxelSwarm
+cd /path/to/Ricsian
 git pull origin main
 php scripts/migrate.php
 ```
 
 ## Via ZIP Download
 
-1. Download the new release from [GitHub](https://github.com/NowSquare/VoxelSwarm/releases)
+1. Download the new release from [GitHub](https://github.com/NowSquare/Ricsian/releases)
 2. Extract over your existing installation
 3. Run migrations:
 
@@ -37,7 +37,7 @@ php scripts/migrate.php
 
 ## Updating VoxelSite (the template)
 
-Updating VoxelSwarm does **not** update the VoxelSite template or existing instances. To update the template for future instances:
+Updating Ricsian does **not** update the VoxelSite template or existing instances. To update the template for future instances:
 
 ```bash
 php scripts/prepare-template.php /path/to/new-voxelsite.zip

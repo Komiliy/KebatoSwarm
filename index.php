@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /**
- * VoxelSwarm — Front Controller
+ * Ricsian — Front Controller
  *
  * All requests route through here via .htaccess (Apache) or
  * try_files (Nginx). Loads bootstrap, registers routes, dispatches.

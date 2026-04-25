@@ -2,7 +2,7 @@
 /**
  * Login page — single password field.
  */
-$pageTitle = 'Operator Login — VoxelSwarm';
+$pageTitle = 'Operator Login — Ricsian';
 ?>
 <div class="sw-card">
 
@@ -12,7 +12,7 @@ $pageTitle = 'Operator Login — VoxelSwarm';
       <path class="voxel-left" d="M4 7.5L12 12L12 21L4 16.5Z" />
       <path class="voxel-right" d="M20 7.5L12 12L12 21L20 16.5Z" />
     </svg>
-    <span class="sw-logo-text">VoxelSwarm</span>
+    <span class="sw-logo-text">Ricsian</span>
   </div>
 
   <h1 class="sw-heading">Operator login</h1>

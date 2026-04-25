@@ -177,7 +177,7 @@ class Router
             return ob_get_clean();
         }
 
-        return '<!DOCTYPE html><html><head><title>404 — VoxelSwarm</title></head>'
+        return '<!DOCTYPE html><html><head><title>404 — Ricsian</title></head>'
              . '<body style="font-family:Inter,system-ui,sans-serif;display:flex;align-items:center;'
              . 'justify-content:center;min-height:100vh;margin:0;background:#09090B;color:#FAFAFA;">'
              . '<div style="text-align:center"><h1 style="font-size:48px;font-weight:700;margin:0;">404</h1>'

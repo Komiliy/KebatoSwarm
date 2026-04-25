@@ -2,7 +2,7 @@
 /**
  * Templates page — VoxelSite ZIP management and version control.
  */
-$pageTitle = 'Templates — VoxelSwarm';
+$pageTitle = 'Templates — Ricsian';
 ?>
 
 <div class="mb-8">

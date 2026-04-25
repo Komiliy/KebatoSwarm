@@ -5,7 +5,7 @@
  * This is the system-level configuration: how instances are created,
  * what visitors see, and how the system sends emails.
  */
-$pageTitle = 'Deployment — VoxelSwarm';
+$pageTitle = 'Deployment — Ricsian';
 $s  = $settings;
 $ac = \Swarm\Models\Setting::getJson('adapter_config', []);
 $mc = \Swarm\Models\Setting::getJson('mail_config', []);
@@ -46,7 +46,7 @@ $headerClass = "px-6 py-4 border-b border-zinc-100 dark:border-zinc-800/80 bg-zi
     <div class="<?= $headerClass ?> flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <h2 class="text-base font-semibold tracking-tight text-zinc-900 dark:text-white">Adapter</h2>
-        <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">How VoxelSwarm creates instance directories and routes traffic.</p>
+        <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">How Ricsian creates instance directories and routes traffic.</p>
       </div>
       <button type="button" id="btn-test-adapter" onclick="testAdapter()"
               class="sw-btn-secondary px-3 py-1.5 text-xs">
@@ -279,7 +279,7 @@ $headerClass = "px-6 py-4 border-b border-zinc-100 dark:border-zinc-800/80 bg-zi
           </div>
           <div>
             <label class="<?= $labelClass ?>">From Name</label>
-            <input class="<?= $inputClass ?>" type="text" name="mail_config[from_name]" placeholder="VoxelSwarm" value="<?= sv($mc, 'from_name') ?>">
+            <input class="<?= $inputClass ?>" type="text" name="mail_config[from_name]" placeholder="Ricsian" value="<?= sv($mc, 'from_name') ?>">
           </div>
         </div>
       </div>

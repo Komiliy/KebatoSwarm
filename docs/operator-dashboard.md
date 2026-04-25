@@ -376,7 +376,7 @@ This page has four sections.
 
 Shows:
 
-- `VoxelSwarm`
+- `Ricsian`
 - `PHP`
 - `SQLite`
 - `Database`

@@ -4,7 +4,7 @@
 declare(strict_types=1);
 
 /**
- * VoxelSwarm — Interactive Setup Wizard
+ * Ricsian — Interactive Setup Wizard
  *
  * First-run configuration script. Walks the operator through:
  * 1. System check (PHP, extensions, permissions)
@@ -27,7 +27,7 @@ use Swarm\Models\Setting;
 
 echo "\n";
 echo "  ╔══════════════════════════════════════╗\n";
-echo "  ║     VoxelSwarm — Setup Wizard        ║\n";
+echo "  ║     Ricsian — Setup Wizard        ║\n";
 echo "  ║     v" . SWARM_VERSION . str_repeat(' ', 31 - strlen(SWARM_VERSION)) . "║\n";
 echo "  ╚══════════════════════════════════════╝\n\n";
 
@@ -135,7 +135,7 @@ $adapterConfig = [];
 switch ($adapter) {
     case 'nginx':
         $adapterConfig['conf_dir']      = prompt('Nginx conf directory', '/etc/nginx/conf.d');
-        $adapterConfig['reload_cmd']    = prompt('Reload command', 'sudo /usr/local/bin/voxelswarm-nginx-reload');
+        $adapterConfig['reload_cmd']    = prompt('Reload command', 'sudo /usr/local/bin/Ricsian-nginx-reload');
         $adapterConfig['ssl_cert_path'] = prompt('SSL cert path (wildcard)', '');
         $adapterConfig['ssl_key_path']  = prompt('SSL key path', '');
         break;
@@ -171,7 +171,7 @@ if ($mailDriver === 'smtp') {
     $mailConfig['smtp_password'] = prompt('SMTP password', '');
     $mailConfig['encryption']   = prompt('Encryption (tls/ssl)', 'tls');
     $mailConfig['from_address'] = prompt('From address', $operatorEmail);
-    $mailConfig['from_name']    = prompt('From name', 'VoxelSwarm');
+    $mailConfig['from_name']    = prompt('From name', 'Ricsian');
     Setting::setJson('mail_config', $mailConfig);
 }
 

@@ -3,7 +3,7 @@
  * Public layout — used by signup, status, login, and 404 pages.
  * Receives $content from Response::view()
  */
-$pageTitle = $pageTitle ?? 'VoxelSwarm';
+$pageTitle = $pageTitle ?? 'Ricsian';
 ?>
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">

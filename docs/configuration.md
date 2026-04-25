@@ -1,6 +1,6 @@
 # Configuration
 
-VoxelSwarm stores runtime configuration in the SQLite `settings` table inside `storage/swarm.db`. The web install wizard creates the first values, then the operator updates them from the dashboard.
+Ricsian stores runtime configuration in the SQLite `settings` table inside `storage/swarm.db`. The web install wizard creates the first values, then the operator updates them from the dashboard.
 
 The settings UI is split across:
 
@@ -33,7 +33,7 @@ For a route-by-route map of where each setting is used, see [page-map.md](page-m
 | `instances_path` | Root directory where provisioned instances are stored. Created during install and updated when the local adapter is verified with a custom root. |
 | `template_path` | Path used by the provisioner when copying the active VoxelSite template. Defaults to `template/voxelsite/active`. |
 | `app_key` | AES-256-CBC encryption key for sensitive stored values. Generated once during install. |
-| `version` | Installed VoxelSwarm version. |
+| `version` | Installed Ricsian version. |
 | `installed_at` | ISO-8601 install timestamp. |
 
 ## Control Panel Settings
@@ -47,13 +47,13 @@ See [adapters/README.md](adapters/README.md) for the current field names used by
 
 ## Email Settings
 
-When `mail_driver` is `log`, VoxelSwarm writes mail activity to `storage/logs/mail-YYYY-MM-DD.log` instead of sending it.
+When `mail_driver` is `log`, Ricsian writes mail activity to `storage/logs/mail-YYYY-MM-DD.log` instead of sending it.
 
 When `mail_driver` is `null`, welcome emails, failure notifications, and test mail are skipped entirely.
 
 ## Environment File
 
-VoxelSwarm keeps `.env` intentionally small:
+Ricsian keeps `.env` intentionally small:
 
 ```env
 APP_DEBUG=false

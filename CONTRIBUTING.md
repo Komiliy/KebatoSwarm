@@ -1,8 +1,8 @@
-# Contributing to VoxelSwarm
+# Contributing to Ricsian
 
-Thank you for considering contributing to VoxelSwarm. Every hosting environment is different — your testing, bug reports, and adapter contributions make VoxelSwarm better for everyone.
+Thank you for considering contributing to Ricsian. Every hosting environment is different — your testing, bug reports, and adapter contributions make Ricsian better for everyone.
 
-If you are testing VoxelSwarm on a real environment, read [docs/testing-feedback.md](docs/testing-feedback.md) first. It explains the early-access model, the logging strategy, and what to include when reporting failures.
+If you are testing Ricsian on a real environment, read [docs/testing-feedback.md](docs/testing-feedback.md) first. It explains the early-access model, the logging strategy, and what to include when reporting failures.
 
 ## How to Contribute
 
@@ -57,8 +57,8 @@ Quick overview:
 ## Development Setup
 
 ```bash
-git clone https://github.com/NowSquare/VoxelSwarm.git
-cd VoxelSwarm
+git clone https://github.com/NowSquare/Ricsian.git
+cd Ricsian
 
 # Dependencies are already included — no composer install needed
 php scripts/migrate.php
@@ -72,10 +72,10 @@ npm install          # Only needed for UI development
 npm run dev          # Vite watch mode for Tailwind + Alpine.js
 ```
 
-> Note: `npm install` and `npm run dev` are **not required** for running VoxelSwarm. The `build/` directory already contains pre-compiled CSS and JS. Only use this if you're modifying the UI.
+> Note: `npm install` and `npm run dev` are **not required** for running Ricsian. The `build/` directory already contains pre-compiled CSS and JS. Only use this if you're modifying the UI.
 
 Use [Laravel Herd](https://herd.laravel.com/) or [Laravel Valet](https://laravel.com/docs/valet) for macOS local development with the `local` adapter. Both can serve plain PHP projects; Laravel is not required.
 
 ## Questions?
 
-Open an [issue](https://github.com/NowSquare/VoxelSwarm/issues) for questions or issues.
+Open an [issue](https://github.com/NowSquare/Ricsian/issues) for questions or issues.

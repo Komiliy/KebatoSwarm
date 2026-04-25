@@ -1,4 +1,4 @@
-<?php $pageTitle = '404 — VoxelSwarm'; ?>
+<?php $pageTitle = '404 — Ricsian'; ?>
 <div class="sw-card" style="text-align:center; max-width:400px;">
   <div style="margin-bottom:20px;">
     <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"

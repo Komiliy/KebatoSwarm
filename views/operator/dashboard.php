@@ -5,7 +5,7 @@
  * When no instances exist, shows a guided setup experience.
  * When instances exist, shows stat cards and the activity log.
  */
-$pageTitle = 'Dashboard — VoxelSwarm';
+$pageTitle = 'Dashboard — Ricsian';
 $isOnboarding = ($counts['total'] ?? 0) === 0;
 ?>
 
@@ -21,7 +21,7 @@ $isOnboarding = ($counts['total'] ?? 0) === 0;
         <path class="fill-current opacity-40" d="M20 7.5L12 12L12 21L20 16.5Z" />
       </svg>
     </div>
-    <h1 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-white mb-2">Welcome to VoxelSwarm</h1>
+    <h1 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-white mb-2">Welcome to Ricsian</h1>
     <p class="text-sm text-zinc-500 dark:text-zinc-400" style="max-width: 360px; margin: 0 auto;">Your provisioning engine is ready. Complete these steps to deploy your first VoxelSite instance.</p>
   </div>
 
@@ -146,7 +146,7 @@ $isOnboarding = ($counts['total'] ?? 0) === 0;
   </div>
 
   <!-- Subtle footer note -->
-  <p class="text-center text-xs text-zinc-400 dark:text-zinc-600 mt-8">VoxelSite makes the website. VoxelSwarm makes it available to the world.</p>
+  <p class="text-center text-xs text-zinc-400 dark:text-zinc-600 mt-8">VoxelSite makes the website. Ricsian makes it available to the world.</p>
 </div>
 
 <?php else: ?>
@@ -154,7 +154,7 @@ $isOnboarding = ($counts['total'] ?? 0) === 0;
 <div class="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
   <div>
     <h1 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-white">Dashboard</h1>
-    <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1">Overview of your VoxelSwarm cluster.</p>
+    <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1">Overview of your Ricsian cluster.</p>
   </div>
   <button onclick="<?= $hasTemplates ? 'openNewInstanceModal()' : 'noTemplatesAlert()' ?>" class="sw-btn-primary">
     <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>

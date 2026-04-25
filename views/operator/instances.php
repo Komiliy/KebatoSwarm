@@ -2,7 +2,7 @@
 /**
  * Instances list — filterable table of all instances.
  */
-$pageTitle = 'Instances — VoxelSwarm';
+$pageTitle = 'Instances — Ricsian';
 ?>
 
 <div class="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
