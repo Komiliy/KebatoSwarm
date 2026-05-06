@@ -16,11 +16,6 @@ $isOnboarding = ($counts['total'] ?? 0) === 0;
   <div class="text-center mb-8">
     <div class="w-16 h-16 mx-auto mb-5 rounded-2xl bg-blue-100 dark:bg-blue-500/10 flex items-center justify-center">
     
-    <svg viewBox="0 0 24 24" class="text-blue-600 dark:text-blue-400" style="width: 32px; height: 32px;">
-        <path class="fill-current opacity-100" d="M12 3L20 7.5L12 12L4 7.5Z" />
-        <path class="fill-current opacity-70" d="M4 7.5L12 12L12 21L4 16.5Z" />
-        <path class="fill-current opacity-40" d="M20 7.5L12 12L12 21L20 16.5Z" />
-      </svg>
 
     </div>
     <h1 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-white mb-2">Welcome to Ricsian</h1>

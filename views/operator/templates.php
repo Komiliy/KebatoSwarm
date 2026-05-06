@@ -38,11 +38,6 @@ $pageTitle = 'Templates — Ricsian';
     <div class="p-8">
       <div class="max-w-md mx-auto text-center">
         <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-blue-100 dark:bg-blue-500/10 flex items-center justify-center">
-          <svg viewBox="0 0 24 24" class="text-blue-600 dark:text-blue-400" style="width: 22px; height: 22px;">
-            <path class="fill-current opacity-100" d="M12 3L20 7.5L12 12L4 7.5Z" />
-            <path class="fill-current opacity-70" d="M4 7.5L12 12L12 21L4 16.5Z" />
-            <path class="fill-current opacity-40" d="M20 7.5L12 12L12 21L20 16.5Z" />
-          </svg>
         </div>
         <p class="text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">No template yet</p>
         <p class="text-xs text-zinc-500 dark:text-zinc-400 mb-5">Three steps to your first deployable template.</p>
@@ -70,11 +65,6 @@ $pageTitle = 'Templates — Ricsian';
             <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 <?= $v['active']
               ? 'bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400'
               : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-400' ?>">
-              <svg viewBox="0 0 24 24" class="text-blue-600 dark:text-blue-400" style="width: 20px; height: 20px;">
-                <path class="fill-current opacity-100" d="M12 3L20 7.5L12 12L4 7.5Z" />
-                <path class="fill-current opacity-70" d="M4 7.5L12 12L12 21L4 16.5Z" />
-                <path class="fill-current opacity-40" d="M20 7.5L12 12L12 21L20 16.5Z" />
-              </svg>
             </div>
             <div class="min-w-0">
               <div class="flex items-center gap-2">

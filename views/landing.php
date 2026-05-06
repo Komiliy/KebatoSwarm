@@ -547,11 +547,6 @@ $operatorLoginUrl = \Swarm\Helpers\Url::control('/operator/login');
   <!-- ── Navigation ── -->
   <nav class="sw-nav" id="nav">
     <a href="/" class="sw-nav-logo">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path class="voxel-top" d="M12 3L20 7.5L12 12L4 7.5Z" />
-        <path class="voxel-left" d="M4 7.5L12 12L12 21L4 16.5Z" />
-        <path class="voxel-right" d="M20 7.5L12 12L12 21L20 16.5Z" />
-      </svg>
       <span>Ricsian</span>
     </a>
     <div class="sw-nav-links">
