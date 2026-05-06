@@ -18,7 +18,7 @@ class CpanelAdapter implements ControlPanelAdapter
     {
         $this->hostname   = rtrim($config['hostname'] ?? '', '/');
         $this->apiToken   = $config['api_token'] ?? '';
-        $this->baseDomain = \Swarm\Models\Setting::get('base_domain', 'localhost');
+        $this->baseDomain = \Swarm\Helpers\Url::baseDomain();
     }
 
     public function createSubdomain(string $slug, string $documentRoot): void

@@ -16,6 +16,7 @@ function sv(array $arr, string $key): string {
 
 $adapter = $s['control_panel_adapter'] ?? 'local';
 $usesDomains = in_array($adapter, ['nginx', 'forge', 'cpanel', 'plesk']);
+$controlAppUrl = $s['control_app_url'] ?? \Swarm\Helpers\Url::controlAppUrl();
 
 $inputClass = "block w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-950 px-3 py-2 text-sm text-zinc-900 dark:text-white placeholder-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-shadow";
 $labelClass = "block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1.5";
@@ -166,6 +167,17 @@ $headerClass = "px-6 py-4 border-b border-zinc-100 dark:border-zinc-800/80 bg-zi
 
       <div id="adapter-test-result" class="hidden p-4 rounded-xl text-sm font-medium border"></div>
 
+      <div class="border-t border-zinc-100 dark:border-zinc-800/80 pt-6">
+        <div class="max-w-2xl">
+          <label class="<?= $labelClass ?>" for="control_app_url">
+            <span class="inline-flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-zinc-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg> Control App URL</span>
+          </label>
+          <input class="<?= $inputClass ?>" type="url" id="control_app_url" name="control_app_url"
+                 value="<?= htmlspecialchars($controlAppUrl) ?>" placeholder="https://app.yourdomain.com">
+          <p class="<?= $hintClass ?>">Operator pages, API endpoints, and provisioning status pages use this URL. Workspaces still use the base domain below.</p>
+        </div>
+      </div>
+
       <!-- Base domain — only shown for domain-based adapters -->
       <div id="domain-fields" class="<?= $usesDomains ? '' : 'hidden' ?> border-t border-zinc-100 dark:border-zinc-800/80 pt-6">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -174,7 +186,7 @@ $headerClass = "px-6 py-4 border-b border-zinc-100 dark:border-zinc-800/80 bg-zi
               <span class="inline-flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-zinc-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Base Domain</span>
             </label>
             <input class="<?= $inputClass ?>" type="text" id="base_domain" name="base_domain"
-                   value="<?= htmlspecialchars($s['base_domain'] ?? '') ?>" placeholder="voxelsite.com">
+                   value="<?= htmlspecialchars($s['base_domain'] ?? '') ?>" placeholder="yourdomain.com">
             <p class="<?= $hintClass ?>">Instances are created as subdomains, e.g. <code class="text-xs bg-zinc-100 dark:bg-zinc-900 px-1 py-0.5 rounded">demo.<?= htmlspecialchars($s['base_domain'] ?? 'yourdomain.com') ?></code></p>
           </div>
           <div>

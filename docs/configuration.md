@@ -15,7 +15,8 @@ For a route-by-route map of where each setting is used, see [page-map.md](page-m
 
 | Setting | Edited In | Description | Install Default |
 |---------|-----------|-------------|-----------------|
-| `base_domain` | `/operator/deployment` | Base domain used for instance subdomains and public links | Value entered during install |
+| `base_domain` | `/operator/deployment` | Base domain used only for workspace subdomains, e.g. `demo.ricsian.com` | Value entered during install |
+| `control_app_url` | `/operator/deployment` | Absolute URL for operator pages, API endpoints, provisioning status pages, and shared library assets | Current install origin or value entered during install |
 | `max_instances` | `/operator/deployment` | Maximum total instances allowed for public signup flow | `100` |
 | `public_site_enabled` | `/operator/deployment` | Whether `/` renders the landing page instead of redirecting to operator login | `false` |
 | `signups_enabled` | `/operator/deployment` | Whether the public signup form is active | `false` |
@@ -57,10 +58,11 @@ Ricsian keeps `.env` intentionally small:
 
 ```env
 APP_DEBUG=false
-APP_URL=https://yourdomain.com
+BASE_DOMAIN=ricsian.com
+CONTROL_APP_URL=https://app.ricsian.com
 ```
 
-Everything else lives in the database so the operator can manage it from the dashboard.
+These are bootstrap fallbacks. After install, the same values live in the database so the operator can manage them from the dashboard.
 
 ## Changing Settings
 

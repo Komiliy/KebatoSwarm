@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Swarm\Services;
 
-use Swarm\Models\Setting;
+use Swarm\Helpers\Url;
 
 /**
  * TemplateManager — Manages VoxelSite ZIP files and versioned templates.
@@ -330,8 +330,7 @@ class TemplateManager
             mkdir($assetsDir, 0755, true);
         }
 
-        $baseDomain = Setting::get('base_domain', 'localhost');
-        $baseUrl = "https://{$baseDomain}/library";
+        $baseUrl = Url::control('/library');
 
         $images = [];
         if (is_dir($this->libraryDir)) {

@@ -71,7 +71,7 @@ Open `https://yourdomain.com` in your browser. Ricsian detects that it's not yet
 
 The wizard walks you through:
 1. **System check** — PHP version, extensions, directory permissions
-2. **Configuration** — base domain, operator email and password, control panel adapter, email settings
+2. **Configuration** — workspace base domain, control app URL, operator email and password, control panel adapter, email settings
 3. **Installation** — runs migrations, generates encryption key, creates your operator account, and auto-logs you in
 
 After installation, you're dropped directly into the operator dashboard.

@@ -6,6 +6,7 @@ namespace Swarm\Controllers;
 
 use Swarm\Database;
 use Swarm\Helpers\Response;
+use Swarm\Helpers\Url;
 use Swarm\Middleware\Csrf;
 use Swarm\Models\Instance;
 use Swarm\Models\Setting;
@@ -40,7 +41,7 @@ class InstanceController
             'filters'       => $filters,
             'csrfField'     => Csrf::field(),
             'adapter'       => Setting::get('control_panel_adapter', 'local'),
-            'baseDomain'    => Setting::get('base_domain', 'localhost'),
+            'baseDomain'    => Url::baseDomain(),
             'instancesPath' => Setting::get('instances_path', SWARM_STORAGE . '/instances'),
             'operatorEmail' => Setting::get('operator_email', ''),
             'hasTemplates'  => $hasTemplates,
@@ -80,6 +81,9 @@ class InstanceController
             $slug = preg_replace('/-+/', '-', trim($slug, '-'));
             if (empty($slug)) {
                 Response::json(['error' => 'Invalid identifier. Use only lowercase letters, numbers, and hyphens.'], 422);
+            }
+            if (SubdomainGenerator::isReserved($slug)) {
+                Response::json(['error' => 'This identifier is reserved for system use.'], 422);
             }
             if (Instance::slugExists($slug)) {
                 Response::json(['error' => 'This identifier is already in use.'], 422);
@@ -124,7 +128,7 @@ class InstanceController
     {
         $instance = Instance::find((int) $id);
         if (!$instance) {
-            Response::redirect('/operator/instances');
+            Response::redirect(Url::control('/operator/instances'));
         }
 
         $logs = Database::query(
@@ -132,7 +136,7 @@ class InstanceController
             [(int) $id]
         )->fetchAll();
 
-        $baseDomain = Setting::get('base_domain', 'localhost');
+        $baseDomain = Url::baseDomain();
 
         Response::view('operator/instance-detail', [
             'instance'   => $instance,

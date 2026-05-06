@@ -18,7 +18,7 @@ class ForgeAdapter implements ControlPanelAdapter
     {
         $this->token      = $config['api_token'] ?? '';
         $this->serverId   = $config['server_id'] ?? '';
-        $this->baseDomain = \Swarm\Models\Setting::get('base_domain', 'localhost');
+        $this->baseDomain = \Swarm\Helpers\Url::baseDomain();
     }
 
     public function createSubdomain(string $slug, string $documentRoot): void

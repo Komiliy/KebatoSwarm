@@ -84,7 +84,7 @@ When `Filesystem (Local)` is selected in Deployment:
 When `Nginx`, `Forge`, `cPanel`, or `Plesk` is selected:
 
 - Required field: `Subdomain`
-- The modal shows `.{base_domain}` as the suffix
+- The modal shows `.{base_domain}` as the suffix. Operator pages, API calls, and status pages use `control_app_url`.
 - A live preview updates as you type
 - Optional fields remain `Name` and `Email`
 - Subdomains are limited to lowercase letters, numbers, and hyphens.

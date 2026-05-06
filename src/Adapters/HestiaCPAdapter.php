@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Swarm\Adapters;
 
 use Swarm\Helpers\Logger;
-use Swarm\Models\Setting;
 
 /**
  * HestiaCPAdapter — Manages web domains via the HestiaCP API/CLI.
@@ -27,7 +26,7 @@ class HestiaCPAdapter implements ControlPanelAdapter
         $this->port = (int) ($config['hestia_port'] ?? 8083);
         $this->username = $config['hestia_username'] ?? '';
         $this->password = $config['hestia_password'] ?? '';
-        $this->baseDomain = Setting::get('base_domain', '');
+        $this->baseDomain = \Swarm\Helpers\Url::baseDomain();
     }
 
     public function createSubdomain(string $slug, string $documentRoot): void

@@ -4,6 +4,7 @@
  * Two fields: Name, Email. Submit: "Create My Workspace."
  */
 $pageTitle = 'Ricsian — Create Your Workspace';
+$signupAction = \Swarm\Helpers\Url::control('/signup');
 ?>
 <div class="sw-card">
 
@@ -22,7 +23,7 @@ $pageTitle = 'Ricsian — Create Your Workspace';
     <h1 class="sw-heading">Create your workspace</h1>
     <p class="sw-subheading">Enter your details and we'll have your site ready in seconds.</p>
 
-    <form method="POST" action="/signup">
+    <form method="POST" action="<?= htmlspecialchars($signupAction) ?>">
       <?= $csrfField ?>
 
       <div class="sw-field">

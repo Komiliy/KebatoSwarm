@@ -3,6 +3,7 @@
  * Login page — single password field.
  */
 $pageTitle = 'Operator Login — Ricsian';
+$loginAction = \Swarm\Helpers\Url::control('/operator/login');
 ?>
 <div class="sw-card">
 
@@ -24,7 +25,7 @@ $pageTitle = 'Operator Login — Ricsian';
     </div>
   <?php endif; ?>
 
-  <form method="POST" action="/operator/login">
+  <form method="POST" action="<?= htmlspecialchars($loginAction) ?>">
     <?= $csrfField ?>
 
     <div class="sw-field">

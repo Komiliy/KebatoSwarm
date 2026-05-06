@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Swarm\Controllers;
 
 use Swarm\Helpers\Response;
+use Swarm\Helpers\Url;
 use Swarm\Services\TemplateManager;
 
 /**
@@ -45,7 +46,7 @@ class TemplateController
 
         if (empty($filename)) {
             $_SESSION['flash'] = ['type' => 'error', 'message' => 'No filename specified.'];
-            Response::redirect('/operator/templates');
+            Response::redirect(Url::control('/operator/templates'));
             return;
         }
 
@@ -57,7 +58,7 @@ class TemplateController
             'message' => $result['message'],
         ];
 
-        Response::redirect('/operator/templates');
+        Response::redirect(Url::control('/operator/templates'));
     }
 
     /**
@@ -69,7 +70,7 @@ class TemplateController
 
         if (empty($version)) {
             $_SESSION['flash'] = ['type' => 'error', 'message' => 'No version specified.'];
-            Response::redirect('/operator/templates');
+            Response::redirect(Url::control('/operator/templates'));
             return;
         }
 
@@ -81,7 +82,7 @@ class TemplateController
             'message' => $result['message'],
         ];
 
-        Response::redirect('/operator/templates');
+        Response::redirect(Url::control('/operator/templates'));
     }
 
     /**
@@ -93,7 +94,7 @@ class TemplateController
 
         if (empty($filename)) {
             $_SESSION['flash'] = ['type' => 'error', 'message' => 'No filename specified.'];
-            Response::redirect('/operator/templates');
+            Response::redirect(Url::control('/operator/templates'));
             return;
         }
 
@@ -105,7 +106,7 @@ class TemplateController
             'message' => $result['message'],
         ];
 
-        Response::redirect('/operator/templates');
+        Response::redirect(Url::control('/operator/templates'));
     }
 
     /**
@@ -117,7 +118,7 @@ class TemplateController
 
         if (empty($version)) {
             $_SESSION['flash'] = ['type' => 'error', 'message' => 'No version specified.'];
-            Response::redirect('/operator/templates');
+            Response::redirect(Url::control('/operator/templates'));
             return;
         }
 
@@ -129,6 +130,6 @@ class TemplateController
             'message' => $result['message'],
         ];
 
-        Response::redirect('/operator/templates');
+        Response::redirect(Url::control('/operator/templates'));
     }
 }

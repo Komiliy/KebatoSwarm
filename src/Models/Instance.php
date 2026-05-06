@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Swarm\Models;
 
 use Swarm\Database;
+use Swarm\Helpers\Url;
 
 /**
  * Instance — Query methods for the instances table.
@@ -16,7 +17,7 @@ class Instance
      */
     public static function create(array $data): int
     {
-        $baseDomain = Setting::get('base_domain', 'localhost');
+        $baseDomain = Url::baseDomain();
 
         return Database::insert(
             "INSERT INTO instances (slug, subdomain, name, email, status, type, document_root, created_at, updated_at)

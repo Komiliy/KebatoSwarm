@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Swarm\Services;
 
 use Swarm\Logger;
+use Swarm\Helpers\Url;
 use Swarm\Models\Setting;
 use PHPMailer\PHPMailer\PHPMailer;
 
@@ -18,8 +19,7 @@ class Mailer
      */
     public static function sendWelcome(array $instance): void
     {
-        $baseDomain = Setting::get('base_domain', 'localhost');
-        $url = "https://{$instance['slug']}.{$baseDomain}/_studio/";
+        $url = Url::workspace($instance, '/_studio/');
 
         self::send(
             to:      $instance['email'],

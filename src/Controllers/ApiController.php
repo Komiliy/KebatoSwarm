@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Swarm\Controllers;
 
 use Swarm\Helpers\Response;
+use Swarm\Helpers\Url;
 use Swarm\Models\Instance;
 use Swarm\Models\Setting;
 use Swarm\Services\Provisioner;
@@ -51,7 +52,7 @@ class ApiController
                 'slug'          => $existing['slug'],
                 'status'        => $existing['status'],
                 'status_url'    => $this->absoluteUrl('/status/' . $existing['id']),
-                'workspace_url' => 'https://' . $existing['subdomain'],
+                'workspace_url' => Url::workspace($existing),
             ]);
         }
 
@@ -67,6 +68,10 @@ class ApiController
 
         if ($slug === '') {
             Response::json(['ok' => false, 'error' => 'valid slug is required'], 422);
+        }
+
+        if (SubdomainGenerator::isReserved($slug)) {
+            Response::json(['ok' => false, 'error' => 'slug is reserved for system use'], 422);
         }
 
         if (Instance::slugExists($slug)) {
@@ -86,7 +91,6 @@ class ApiController
             Instance::update($instanceId, ['notes' => $notes]);
         }
 
-        $baseDomain = Setting::get('base_domain', 'localhost');
         $response = [
             'ok'            => true,
             'existing'      => false,
@@ -94,7 +98,7 @@ class ApiController
             'slug'          => $slug,
             'status'        => 'queued',
             'status_url'    => $this->absoluteUrl('/status/' . $instanceId),
-            'workspace_url' => "https://{$slug}.{$baseDomain}",
+            'workspace_url' => Url::workspace($slug),
         ];
 
         http_response_code(202);
@@ -161,7 +165,16 @@ class ApiController
     private function buildProvisionNotes(array $payload): string
     {
         $external = [];
-        foreach (['source', 'memberpress_member_id', 'memberpress_transaction_id', 'memberpress_subscription_id'] as $key) {
+        foreach ([
+            'source',
+            'wordpress_user_id',
+            'memberpress_member_id',
+            'memberpress_transaction_id',
+            'memberpress_subscription_id',
+            'stripe_customer_id',
+            'stripe_subscription_id',
+            'stripe_checkout_session_id',
+        ] as $key) {
             if (isset($payload[$key]) && $payload[$key] !== '') {
                 $external[$key] = (string) $payload[$key];
             }
@@ -176,7 +189,6 @@ class ApiController
 
     private function absoluteUrl(string $path): string
     {
-        $baseDomain = Setting::get('base_domain', 'localhost');
-        return 'https://' . $baseDomain . $path;
+        return Url::control($path);
     }
 }

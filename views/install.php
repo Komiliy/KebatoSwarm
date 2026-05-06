@@ -130,8 +130,15 @@ $pageTitle = 'Install — Ricsian';
         <!-- Domain -->
         <div>
           <label class="install-label">Base Domain *</label>
-          <input type="text" class="install-input" x-model="form.base_domain" placeholder="swarm.yourdomain.com">
-          <p class="install-hint">Instances will be accessible at *.yourdomain.com</p>
+          <input type="text" class="install-input" x-model="form.base_domain" placeholder="yourdomain.com">
+          <p class="install-hint">Workspaces will be created as subdomains, e.g. demo.yourdomain.com</p>
+        </div>
+
+        <!-- Control app URL -->
+        <div>
+          <label class="install-label">Control App URL *</label>
+          <input type="url" class="install-input" x-model="form.control_app_url" placeholder="https://app.yourdomain.com">
+          <p class="install-hint">Operator pages, API endpoints, and status pages use this URL.</p>
         </div>
 
         <!-- Operator email -->
@@ -354,6 +361,7 @@ function installWizard() {
 
     form: {
       base_domain: '',
+      control_app_url: window.location.origin,
       operator_email: '',
       operator_password: '',
       operator_password_confirm: '',
@@ -396,6 +404,7 @@ function installWizard() {
       if (this.step === 2) {
         // Validate
         if (!this.form.base_domain) { this.error = 'Base domain is required.'; return; }
+        if (!this.form.control_app_url) { this.error = 'Control app URL is required.'; return; }
         if (!this.form.operator_email) { this.error = 'Operator email is required.'; return; }
         if (!this.form.operator_password || this.form.operator_password.length < 8) { this.error = 'Password must be at least 8 characters.'; return; }
         if (this.form.operator_password !== this.form.operator_password_confirm) { this.error = 'Passwords do not match.'; return; }

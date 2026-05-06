@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Swarm\Controllers;
 
 use Swarm\Helpers\Response;
+use Swarm\Helpers\Url;
 use Swarm\Middleware\Csrf;
 use Swarm\Models\Session;
 use Swarm\Models\Setting;
@@ -21,7 +22,7 @@ class AuthController
     {
         // Already logged in?
         if (Session::validate()) {
-            Response::redirect('/operator');
+            Response::redirect(Url::control('/operator'));
         }
 
         Response::view('login', [
@@ -47,7 +48,7 @@ class AuthController
         Session::create();
         Session::cleanup(); // Remove expired sessions
 
-        Response::redirect('/operator');
+        Response::redirect(Url::control('/operator'));
     }
 
     /**
@@ -56,6 +57,6 @@ class AuthController
     public function destroy(): void
     {
         Session::destroy();
-        Response::redirect('/operator/login');
+        Response::redirect(Url::control('/operator/login'));
     }
 }

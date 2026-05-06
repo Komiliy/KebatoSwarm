@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Swarm\Adapters;
 
 use Swarm\Helpers\Logger;
-use Swarm\Models\Setting;
 
 /**
  * CloudPanelAdapter — Manages sites via the CloudPanel API/CLI.
@@ -23,7 +22,7 @@ class CloudPanelAdapter implements ControlPanelAdapter
     {
         $this->hostname = $config['cloudpanel_hostname'] ?? '';
         $this->apiKey = $config['cloudpanel_api_key'] ?? '';
-        $this->baseDomain = Setting::get('base_domain', '');
+        $this->baseDomain = \Swarm\Helpers\Url::baseDomain();
     }
 
     public function createSubdomain(string $slug, string $documentRoot): void

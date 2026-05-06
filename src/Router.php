@@ -143,6 +143,7 @@ class Router
     private function runMiddleware(string $name): void
     {
         $middlewareMap = [
+            'control'        => Middleware\ControlApp::class,
             'auth'            => Middleware\Auth::class,
             'throttle:signup' => [Middleware\Throttle::class, 'signup'],
             'throttle:login'  => [Middleware\Throttle::class, 'login'],

@@ -10,8 +10,8 @@ use Swarm\Helpers\Crypt;
 /**
  * Setting — Key-value access to the settings table.
  *
- * All Swarm configuration lives here: base_domain, adapter config,
- * mail config, operator credentials, feature flags.
+ * All Swarm configuration lives here: base_domain, control_app_url,
+ * adapter config, mail config, operator credentials, feature flags.
  */
 class Setting
 {

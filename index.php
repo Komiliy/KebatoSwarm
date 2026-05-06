@@ -33,31 +33,31 @@ $isInstallRoute = str_starts_with($requestUri, '/install');
 $isAssetRoute = preg_match('/\.(css|js|png|jpg|svg|ico|woff2?)$/', $requestUri);
 
 if (!isInstalled() && !$isInstallRoute && !$isAssetRoute) {
-    header('Location: /install');
+    header('Location: ' . \Swarm\Helpers\Url::control('/install'));
     exit;
 }
 
 // ── Install wizard (only accessible when not installed) ──
-$router->get('/install',               [InstallController::class,  'index']);
-$router->post('/install/check',        [InstallController::class,  'check']);
-$router->post('/install/test-adapter', [InstallController::class,  'testAdapter']);
-$router->post('/install/complete',     [InstallController::class,  'complete']);
+$router->get('/install',               [InstallController::class,  'index'],       ['control']);
+$router->post('/install/check',        [InstallController::class,  'check'],       ['control']);
+$router->post('/install/test-adapter', [InstallController::class,  'testAdapter'], ['control']);
+$router->post('/install/complete',     [InstallController::class,  'complete'],    ['control']);
 
 // ── Public ──
 $router->get('/',                        [LandingController::class,   'index']);
-$router->get('/signup',                  [SignupController::class,    'index']);
-$router->post('/signup',                 [SignupController::class,    'store'],  ['throttle:signup']);
-$router->get('/status/{id}',             [StatusController::class,    'show']);
-$router->get('/api/status/{id}',         [StatusController::class,    'json']);
-$router->post('/api/provision',          [ApiController::class,       'provision']);
+$router->get('/signup',                  [SignupController::class,    'index'],  ['control']);
+$router->post('/signup',                 [SignupController::class,    'store'],  ['control', 'throttle:signup']);
+$router->get('/status/{id}',             [StatusController::class,    'show'],   ['control']);
+$router->get('/api/status/{id}',         [StatusController::class,    'json'],   ['control']);
+$router->post('/api/provision',          [ApiController::class,       'provision'], ['control']);
 
 // ── Operator auth ──
-$router->get('/operator/login',          [AuthController::class,      'show']);
-$router->post('/operator/login',         [AuthController::class,      'store'],  ['throttle:login']);
-$router->post('/operator/logout',        [AuthController::class,      'destroy']);
+$router->get('/operator/login',          [AuthController::class,      'show'],   ['control']);
+$router->post('/operator/login',         [AuthController::class,      'store'],  ['control', 'throttle:login']);
+$router->post('/operator/logout',        [AuthController::class,      'destroy'], ['control']);
 
 // ── Operator dashboard (session-protected) ──
-$router->group(['prefix' => '/operator', 'middleware' => ['auth']], function (Router $r) {
+$router->group(['prefix' => '/operator', 'middleware' => ['control', 'auth']], function (Router $r) {
     $r->get('/',                              [DashboardController::class,    'index']);
     $r->get('/instances',                     [InstanceController::class,     'index']);
     $r->post('/instances',                    [InstanceController::class,     'store']);

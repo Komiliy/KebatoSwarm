@@ -7,6 +7,7 @@ namespace Swarm\Controllers;
 use Swarm\Database;
 use Swarm\Helpers\Crypt;
 use Swarm\Helpers\Response;
+use Swarm\Helpers\Url;
 use Swarm\Models\Setting;
 
 /**
@@ -28,7 +29,7 @@ class InstallController
     public static function index(): void
     {
         if (isInstalled()) {
-            Response::redirect('/operator');
+            Response::redirect(Url::control('/operator'));
             return;
         }
 
@@ -190,8 +191,17 @@ class InstallController
         // ── Validate ──
         $errors = [];
 
-        if (empty($body['base_domain'])) {
+        $baseDomain = Url::normalizeDomain((string) ($body['base_domain'] ?? ''));
+        $controlAppUrl = Url::normalizeAbsoluteUrl((string) ($body['control_app_url'] ?? ''));
+        if ($controlAppUrl === '') {
+            $controlAppUrl = Url::currentOrigin();
+        }
+
+        if ($baseDomain === '') {
             $errors[] = 'Base domain is required.';
+        }
+        if ($controlAppUrl === '') {
+            $errors[] = 'A valid control app URL is required.';
         }
         if (empty($body['operator_email']) || !filter_var($body['operator_email'], FILTER_VALIDATE_EMAIL)) {
             $errors[] = 'A valid operator email is required.';
@@ -219,8 +229,8 @@ class InstallController
             }
 
             // ── Step 3: Store settings ──
-            $baseDomain = trim($body['base_domain']);
             Setting::set('base_domain', $baseDomain);
+            Setting::set('control_app_url', $controlAppUrl);
             Setting::set('operator_email', trim($body['operator_email']));
             Setting::set('operator_password_hash', password_hash($body['operator_password'], PASSWORD_BCRYPT));
 
@@ -260,7 +270,7 @@ class InstallController
             Response::json([
                 'ok'       => true,
                 'message'  => 'Installation complete.',
-                'redirect' => '/operator',
+                'redirect' => Url::control('/operator'),
             ]);
         } catch (\Throwable $e) {
             Response::json([

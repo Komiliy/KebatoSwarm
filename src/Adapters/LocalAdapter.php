@@ -26,7 +26,7 @@ class LocalAdapter implements ControlPanelAdapter
 
     public function __construct(array $config = [])
     {
-        $this->baseDomain    = Setting::get('base_domain', 'localhost');
+        $this->baseDomain    = \Swarm\Helpers\Url::baseDomain();
         $this->instancesRoot = $config['instances_root'] ?? '';
 
         // If a custom instances root is configured, persist it

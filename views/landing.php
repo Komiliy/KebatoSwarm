@@ -5,6 +5,8 @@
  *
  * This is the first thing anyone sees. It must be premium.
  */
+$signupUrl = \Swarm\Helpers\Url::control('/signup');
+$operatorLoginUrl = \Swarm\Helpers\Url::control('/operator/login');
 ?>
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
@@ -553,7 +555,7 @@
       <span>Ricsian</span>
     </a>
     <div class="sw-nav-links">
-      <a href="/operator/login" class="sw-nav-link">Operator</a>
+      <a href="<?= htmlspecialchars($operatorLoginUrl) ?>" class="sw-nav-link">Operator</a>
       <button class="sw-theme-toggle" onclick="toggleTheme()" title="Toggle theme" aria-label="Toggle theme">
         <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
              fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -561,7 +563,7 @@
         </svg>
       </button>
       <?php if ($signupsEnabled): ?>
-        <a href="/signup" class="sw-nav-cta">Get Started</a>
+        <a href="<?= htmlspecialchars($signupUrl) ?>" class="sw-nav-cta">Get Started</a>
       <?php endif; ?>
     </div>
   </nav>
@@ -585,7 +587,7 @@
 
     <div class="sw-hero-actions">
       <?php if ($signupsEnabled): ?>
-        <a href="/signup" class="sw-btn-primary">
+        <a href="<?= htmlspecialchars($signupUrl) ?>" class="sw-btn-primary">
           Create Your Workspace
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
@@ -728,7 +730,7 @@
     <p>Your website is one prompt away.</p>
     <div style="position:relative;">
       <?php if ($signupsEnabled): ?>
-        <a href="/signup" class="sw-btn-primary">
+        <a href="<?= htmlspecialchars($signupUrl) ?>" class="sw-btn-primary">
           Create Your Workspace
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
@@ -741,7 +743,7 @@
   <!-- ── Footer ── -->
   <footer class="sw-footer">
     Ricsian v<?= SWARM_VERSION ?> · Plain PHP. SQLite. Your files. ·
-    <a href="/operator/login">Operator Login</a>
+    <a href="<?= htmlspecialchars($operatorLoginUrl) ?>">Operator Login</a>
   </footer>
 
   <!-- ── Scripts ── -->

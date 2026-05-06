@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Swarm\Controllers;
 
 use Swarm\Helpers\Response;
+use Swarm\Helpers\Url;
 use Swarm\Helpers\Validator;
 use Swarm\Middleware\Csrf;
 use Swarm\Models\Instance;
@@ -25,7 +26,7 @@ class SignupController
         // Public site must be enabled AND signups must be enabled
         $publicSiteEnabled = Setting::get('public_site_enabled', 'false') === 'true';
         if (!$publicSiteEnabled) {
-            Response::redirect('/operator/login');
+            Response::redirect(Url::control('/operator/login'));
             return;
         }
         $signupsEnabled = Setting::get('signups_enabled', 'false') === 'true';
@@ -94,7 +95,7 @@ class SignupController
         ]);
 
         // Send redirect immediately, then provision in background
-        $statusUrl = "/status/{$instanceId}";
+        $statusUrl = Url::control("/status/{$instanceId}");
 
         // Flush the redirect response to the browser
         header("Location: {$statusUrl}");

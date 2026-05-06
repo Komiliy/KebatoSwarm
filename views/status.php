@@ -54,6 +54,7 @@ $pageTitle = 'Setting up your workspace — Ricsian';
     <script>
       (function() {
         const instanceId = <?= json_encode($instance['id'] ?? 0) ?>;
+        const statusApiUrl = <?= json_encode($statusApiUrl ?? null) ?>;
         const heading    = document.getElementById('status-heading');
         const message    = document.getElementById('status-message');
         const success    = document.getElementById('status-success');
@@ -65,7 +66,7 @@ $pageTitle = 'Setting up your workspace — Ricsian';
         function poll() {
           if (!polling) return;
 
-          fetch('/api/status/' + instanceId)
+          fetch(statusApiUrl || ('/api/status/' + instanceId))
             .then(r => r.json())
             .then(data => {
               message.textContent = data.message;

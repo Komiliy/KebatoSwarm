@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Swarm\Controllers;
 
 use Swarm\Helpers\Response;
+use Swarm\Helpers\Url;
 use Swarm\Models\Instance;
 use Swarm\Models\Setting;
 
@@ -25,7 +26,7 @@ class LandingController
         $publicSiteEnabled = Setting::get('public_site_enabled', 'false') === 'true';
 
         if (!$publicSiteEnabled) {
-            Response::redirect('/operator/login');
+            Response::redirect(Url::control('/operator/login'));
             return;
         }
 

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Swarm\Adapters;
 
 use Swarm\Logger;
-use Swarm\Models\Setting;
 use Symfony\Component\Process\Process;
 
 /**
@@ -28,7 +27,7 @@ class NginxAdapter implements ControlPanelAdapter
         $this->reloadCmd   = $config['reload_cmd']     ?? 'sudo /usr/local/bin/Ricsian-nginx-reload';
         $this->sslCertPath = $config['ssl_cert_path']  ?? '';
         $this->sslKeyPath  = $config['ssl_key_path']   ?? '';
-        $this->baseDomain  = Setting::get('base_domain', 'localhost');
+        $this->baseDomain  = \Swarm\Helpers\Url::baseDomain();
     }
 
     public function createSubdomain(string $slug, string $documentRoot): void

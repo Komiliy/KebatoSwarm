@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Swarm\Middleware;
 
+use Swarm\Helpers\Url;
 use Swarm\Models\Session;
 
 /**
@@ -15,7 +16,7 @@ class Auth
     public function handle(): void
     {
         if (!Session::validate()) {
-            header('Location: /operator/login');
+            header('Location: ' . Url::control('/operator/login'));
             exit;
         }
     }

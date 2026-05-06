@@ -28,7 +28,7 @@ POST
 URL:
 
 ```text
-https://ricsian.com/api/provision
+https://app.ricsian.com/api/provision
 ```
 
 Headers:
@@ -65,7 +65,7 @@ Success returns `202 Accepted`:
   "instance_id": 12,
   "slug": "customer-site",
   "status": "queued",
-  "status_url": "https://ricsian.com/status/12",
+  "status_url": "https://app.ricsian.com/status/12",
   "workspace_url": "https://customer-site.ricsian.com"
 }
 ```

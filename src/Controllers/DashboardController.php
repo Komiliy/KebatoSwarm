@@ -6,6 +6,7 @@ namespace Swarm\Controllers;
 
 use Swarm\Database;
 use Swarm\Helpers\Response;
+use Swarm\Helpers\Url;
 use Swarm\Models\Instance;
 
 /**
@@ -45,7 +46,7 @@ class DashboardController
             'storageUsed'   => $this->formatBytes($storageUsed),
             'recentLogs'    => $recentLogs,
             'adapter'       => \Swarm\Models\Setting::get('control_panel_adapter', 'local'),
-            'baseDomain'    => \Swarm\Models\Setting::get('base_domain', 'localhost'),
+            'baseDomain'    => Url::baseDomain(),
             'instancesPath' => $instancesPath,
             'operatorEmail' => \Swarm\Models\Setting::get('operator_email', ''),
             'hasTemplates'  => $hasTemplates,

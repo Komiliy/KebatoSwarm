@@ -82,4 +82,12 @@ class SubdomainGenerator
 
         return $slug;
     }
+
+    /**
+     * Check whether a manually supplied slug conflicts with control/system routes.
+     */
+    public static function isReserved(string $slug): bool
+    {
+        return in_array(strtolower($slug), self::RESERVED, true);
+    }
 }

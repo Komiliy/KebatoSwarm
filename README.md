@@ -61,6 +61,8 @@ By default, Ricsian runs in **operator-only mode** — `GET /` redirects to the 
 
 - **PHP 8.2+** with extensions: `pdo_sqlite`, `mbstring`, `openssl`, `fileinfo`, `zip`, `curl`
 - **Web server:** Nginx (recommended) or Apache with `mod_rewrite`
+- **Control app URL:** where Ricsian's operator, API, and status pages live, e.g. `https://app.yourdomain.com`
+- **Workspace base domain:** where customer workspaces are created, e.g. `demo.yourdomain.com`
 - **Wildcard DNS:** `*.yourdomain.com → your server IP` (only for Nginx adapter — Forge, cPanel, and Plesk handle this automatically)
 - **Wildcard SSL:** for `*.yourdomain.com` (only for Nginx adapter — other adapters provision SSL per-subdomain)
 - **VoxelSite license:** [voxelsite.com/buy](https://voxelsite.com/buy)

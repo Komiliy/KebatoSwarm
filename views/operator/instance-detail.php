@@ -26,7 +26,7 @@ $statusDotClass = match($instance['status']) {
   default        => 'bg-zinc-400',
 };
 
-$liveUrl = "https://{$instance['subdomain']}";
+$liveUrl = \Swarm\Helpers\Url::workspace($instance);
 
 $cardClass   = "bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800/80 rounded-xl shadow-sm dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] overflow-hidden";
 $headerClass = "px-5 py-4 border-b border-zinc-100 dark:border-zinc-800/80 bg-zinc-50/50 dark:bg-zinc-800/20";

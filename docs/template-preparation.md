@@ -91,7 +91,7 @@ template/voxelsite/
 
 ```json
 {
-  "base_url": "https://yourdomain.com/library",
+  "base_url": "https://app.yourdomain.com/library",
   "images": [
     "business/office-modern.jpg",
     "food/restaurant-interior.jpg"

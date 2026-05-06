@@ -18,7 +18,7 @@ class PleskAdapter implements ControlPanelAdapter
     {
         $this->hostname   = rtrim($config['hostname'] ?? '', '/');
         $this->apiKey     = $config['api_key'] ?? '';
-        $this->baseDomain = \Swarm\Models\Setting::get('base_domain', 'localhost');
+        $this->baseDomain = \Swarm\Helpers\Url::baseDomain();
     }
 
     public function createSubdomain(string $slug, string $documentRoot): void

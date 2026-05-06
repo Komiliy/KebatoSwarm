@@ -43,10 +43,10 @@ flowchart TD
 |------|--------------|---------------------|
 | `/install` | App is not installed | 3-step setup wizard: system requirements, configuration, install result. The adapter select currently enables `local`, `nginx`, `forge`, `cpanel`, and `plesk`; other adapter entries are shown as coming soon. |
 | `/` | Installed and `public_site_enabled=true` | Landing page with nav, hero, value props, 4-step explainer, operator pitch, CTA footer. Signup buttons render only when `signups_enabled=true`. |
-| `/` | Installed and `public_site_enabled=false` | Redirects to `/operator/login`. |
+| `/` | Installed and `public_site_enabled=false` | Redirects to `{control_app_url}/operator/login`. |
 | `/signup` | Installed and `public_site_enabled=true` | Public signup card. When `signups_enabled=true`, shows business name + email form. When `signups_enabled=false`, shows a "Coming soon" state. |
-| `/signup` | Installed and `public_site_enabled=false` | Redirects to `/operator/login`. |
-| `/status/{id}` | Any time the instance exists | Provisioning status card with polling, success CTA to `https://{subdomain}/_studio/`, or failure state. If the instance does not exist, shows a not-found state. |
+| `/signup` | Installed and `public_site_enabled=false` | Redirects to `{control_app_url}/operator/login`. |
+| `/status/{id}` | Any time the instance exists | Provisioning status card served through `control_app_url`, with polling, success CTA to `https://{subdomain}/_studio/`, or failure state. If the instance does not exist, shows a not-found state. |
 | `/operator/login` | Installed and operator is logged out | Password-only login form with flash error state. |
 | `404` | No route matched | Public 404 card with a back-to-home button. |
 
@@ -68,9 +68,9 @@ All `/operator/*` pages below require a valid operator session, except `/operato
 
 | Source | Action | Result |
 |-------|--------|--------|
-| Install wizard | Complete setup | Creates settings, auto-logs in operator, redirects to `/operator`. |
-| Landing page | `Create Your Workspace` | Goes to `/signup` when signups are enabled. |
-| Signup form | Submit valid form | Creates instance, redirects immediately to `/status/{id}`, provisions in background. |
+| Install wizard | Complete setup | Creates settings, auto-logs in operator, redirects to `{control_app_url}/operator`. |
+| Landing page | `Create Your Workspace` | Goes to `{control_app_url}/signup` when signups are enabled. |
+| Signup form | Submit valid form | Creates instance, redirects immediately to `{control_app_url}/status/{id}`, provisions in background. |
 | Status page | Poll success | Reveals workspace CTA to `/_studio/`. |
 | Dashboard or Instances | `New Instance` | Opens shared modal; successful submit redirects to `/operator/instances/{id}`. |
 | Instance detail | `Pause` / `Resume` / `Delete` | Calls instance actions, then reloads or redirects to the list. |
@@ -84,7 +84,8 @@ All `/operator/*` pages below require a valid operator session, except `/operato
 |--------|--------------------|------------------|
 | `public_site_enabled` | Install defaults + `/operator/deployment` | Whether `/` renders the landing page or redirects to `/operator/login`. |
 | `signups_enabled` | Install defaults + `/operator/deployment` | Whether landing page CTAs point to signup and whether `/signup` shows the form or a "Coming soon" state. |
-| `base_domain` | Install + `/operator/deployment` | Instance subdomain generation, status CTA URL, and landing copy examples. |
+| `base_domain` | Install + `/operator/deployment` | Instance subdomain generation and workspace URLs. |
+| `control_app_url` | Install + `/operator/deployment` | Operator redirects, API endpoints, provisioning status pages, and shared library asset URLs. |
 | `max_instances` | `/operator/deployment` | Blocks new public signups once the total instance count reaches the configured limit. |
 | `control_panel_adapter` | Install + `/operator/deployment` | Which adapter provisions instances and whether the new-instance modal is subdomain-based or path-based. |
 | `adapter_config` | Install + `/operator/deployment` | Adapter-specific credentials and filesystem/server config. |

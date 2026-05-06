@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Swarm\Adapters;
 
 use Swarm\Helpers\Logger;
-use Swarm\Models\Setting;
 
 /**
  * CyberPanelAdapter — Manages child domains via the CyberPanel API.
@@ -30,7 +29,7 @@ class CyberPanelAdapter implements ControlPanelAdapter
         $this->port = (int) ($config['cyberpanel_port'] ?? 8090);
         $this->username = $config['cyberpanel_username'] ?? '';
         $this->password = $config['cyberpanel_password'] ?? '';
-        $this->baseDomain = Setting::get('base_domain', '');
+        $this->baseDomain = \Swarm\Helpers\Url::baseDomain();
     }
 
     public function createSubdomain(string $slug, string $documentRoot): void

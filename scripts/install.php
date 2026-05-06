@@ -23,6 +23,7 @@ require_once __DIR__ . '/../src/bootstrap.php';
 
 use Swarm\Database;
 use Swarm\Helpers\Crypt;
+use Swarm\Helpers\Url;
 use Swarm\Models\Setting;
 
 echo "\n";
@@ -79,8 +80,14 @@ echo "\n";
 echo "Step 3: Base Configuration\n";
 echo str_repeat('─', 40) . "\n";
 
-$baseDomain = prompt('Base domain (e.g., voxelsite.com)', Setting::get('base_domain', ''));
+$baseDomain = Url::normalizeDomain(prompt('Base domain for workspaces (e.g., ricsian.com)', Setting::get('base_domain', '')));
 Setting::set('base_domain', $baseDomain);
+
+$controlAppUrl = Url::normalizeAbsoluteUrl(prompt('Control app URL (e.g., https://app.ricsian.com)', Setting::get('control_app_url', '')));
+if ($controlAppUrl === '') {
+    $controlAppUrl = 'https://' . $baseDomain;
+}
+Setting::set('control_app_url', $controlAppUrl);
 
 $operatorEmail = prompt('Operator email', Setting::get('operator_email', ''));
 Setting::set('operator_email', $operatorEmail);
@@ -189,6 +196,7 @@ echo "╔═══════════════════════�
 echo "║           Setup Complete ✓           ║\n";
 echo "╚══════════════════════════════════════╝\n\n";
 echo "  Base domain:     {$baseDomain}\n";
+echo "  Control app URL: {$controlAppUrl}\n";
 echo "  Operator email:  {$operatorEmail}\n";
 echo "  Adapter:         {$adapter}\n";
 echo "  Mail driver:     {$mailDriver}\n";
@@ -197,7 +205,7 @@ echo "  Database:        " . SWARM_DB_PATH . "\n";
 echo "\n";
 echo "  Next steps:\n";
 echo "  1. Point wildcard DNS: *.{$baseDomain} → your VPS IP\n";
-echo "  2. Visit: https://{$baseDomain}/operator\n";
+echo "  2. Visit: {$controlAppUrl}/operator\n";
 echo "  3. Log in and provision a demo instance\n";
 echo "\n";
 

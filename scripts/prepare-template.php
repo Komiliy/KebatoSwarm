@@ -32,6 +32,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/../src/bootstrap.php';
 
+use Swarm\Helpers\Url;
 use Swarm\Models\Setting;
 
 // ── Paths ──
@@ -278,9 +279,7 @@ function generateLibraryJson(string $templatePath, string $libraryDir): void
         mkdir($assetsDir, 0755, true);
     }
 
-    $baseDomain = Setting::get('base_domain', 'localhost');
-    $protocol   = str_contains($baseDomain, 'localhost') || str_contains($baseDomain, '.test') ? 'https' : 'https';
-    $baseUrl    = "{$protocol}://{$baseDomain}/library";
+    $baseUrl = Url::control('/library');
 
     $images = [];
     if (is_dir($libraryDir)) {

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Swarm\Adapters;
 
 use Swarm\Helpers\Logger;
-use Swarm\Models\Setting;
 
 /**
  * DirectAdminAdapter — Manages subdomains via the DirectAdmin API.
@@ -27,7 +26,7 @@ class DirectAdminAdapter implements ControlPanelAdapter
         $this->port = (int) ($config['da_port'] ?? 2222);
         $this->username = $config['da_username'] ?? '';
         $this->loginKey = $config['da_login_key'] ?? '';
-        $this->baseDomain = Setting::get('base_domain', '');
+        $this->baseDomain = \Swarm\Helpers\Url::baseDomain();
     }
 
     public function createSubdomain(string $slug, string $documentRoot): void

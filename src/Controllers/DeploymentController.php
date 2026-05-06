@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Swarm\Controllers;
 
 use Swarm\Helpers\Response;
+use Swarm\Helpers\Url;
 use Swarm\Middleware\Csrf;
 use Swarm\Models\Setting;
 use Swarm\Adapters\AdapterFactory;
@@ -37,8 +38,20 @@ class DeploymentController
     {
         Csrf::validate();
 
+        if (isset($_POST['base_domain'])) {
+            $_POST['base_domain'] = Url::normalizeDomain((string) $_POST['base_domain']);
+            if ($_POST['base_domain'] === '') {
+                Response::back(['flash' => 'Base domain must be a valid domain name.']);
+            }
+        }
+
+        if (isset($_POST['control_app_url'])) {
+            $_POST['control_app_url'] = Url::normalizeAbsoluteUrl((string) $_POST['control_app_url'])
+                ?: Url::currentOrigin();
+        }
+
         $fields = [
-            'base_domain', 'max_instances', 'public_site_enabled',
+            'base_domain', 'control_app_url', 'max_instances', 'public_site_enabled',
             'signups_enabled', 'control_panel_adapter', 'mail_driver',
         ];
 

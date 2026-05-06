@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Swarm\Controllers;
 
 use Swarm\Helpers\Response;
+use Swarm\Helpers\Url;
 use Swarm\Models\Instance;
 
 /**
@@ -28,6 +29,7 @@ class StatusController
         Response::view('status', [
             'instance'  => $instance,
             'notFound'  => false,
+            'statusApiUrl' => Url::control('/api/status/' . $instance['id']),
         ], 'public');
     }
 
@@ -61,7 +63,7 @@ class StatusController
 
         $url = null;
         if ($status === 'active') {
-            $url = "https://{$instance['subdomain']}/_studio/";
+            $url = Url::workspace($instance, '/_studio/');
             $message = 'Your workspace is ready.';
         }
 
